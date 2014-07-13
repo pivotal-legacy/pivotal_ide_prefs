@@ -24,11 +24,11 @@ module IdePrefs
       end
 
       def matching_user_prefs
-        user_prefs_repo.find_matching_prefs(pivotal_prefs_repo.prefs)
+        user_prefs_repo.find_matching_prefs(pivotal_prefs_repo.all)
       end
 
       def install_pivotal_prefs
-        user_prefs_repo.install_prefs(pivotal_prefs_repo.prefs)
+        user_prefs_repo.install_prefs(pivotal_prefs_repo.all)
       end
     end
   end

@@ -5,7 +5,7 @@ module IdePrefs
     describe InstallPrefs do
       context "the user has not already installed the preferences" do
         before do
-          user_prefs_repo.stub(:installed?) do |*|
+          def user_prefs_repo.installed?(*)
             false
           end
         end
@@ -23,7 +23,7 @@ module IdePrefs
         it "installs the source prefs" do
           execute
 
-          expect(user_prefs_repo).to have_installed_prefs(pivotal_prefs_repo.prefs)
+          expect(user_prefs_repo).to have_installed_prefs(pivotal_prefs_repo.all)
         end
       end
 
@@ -72,7 +72,7 @@ module IdePrefs
       end
 
       class PivotalPrefsRepoStub
-        attr_reader :prefs
+        attr_reader :all
 
         def initialize(prefs: nil)
           @prefs = prefs
@@ -81,4 +81,3 @@ module IdePrefs
     end
   end
 end
-

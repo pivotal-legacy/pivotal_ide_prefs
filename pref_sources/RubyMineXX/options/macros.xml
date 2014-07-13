@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<application>
+  <component name="ActionMacroManager">
+    <macro name="run whole test file">
+      <action id="EditorTextStart" />
+      <action id="RunClass" />
+      <action id="Back" />
+    </macro>
+  </component>
+</application>
+

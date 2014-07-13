@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<keymap version="1" name="Pivotal OS X 10.5+" parent="Mac OS X 10.5+">
+  <action id="CloseAllEditorsButActive">
+    <keyboard-shortcut first-keystroke="shift meta W" />
+  </action>
+  <action id="Macro.run whole test file">
+    <keyboard-shortcut first-keystroke="control meta alt R" />
+  </action>
+  <action id="MoveEditorToOppositeTabGroup">
+    <keyboard-shortcut first-keystroke="shift control meta alt LEFT" />
+    <keyboard-shortcut first-keystroke="shift control meta alt RIGHT" />
+  </action>
+  <action id="SplitHorizontally">
+    <keyboard-shortcut first-keystroke="shift control meta alt DOWN" />
+  </action>
+  <action id="SplitVertically">
+    <keyboard-shortcut first-keystroke="shift control meta alt UP" />
+  </action>
+  <action id="SwitchApply">
+    <keyboard-shortcut first-keystroke="control alt ENTER" />
+  </action>
+  <action id="SwitchDown">
+    <keyboard-shortcut first-keystroke="control alt DOWN" />
+  </action>
+  <action id="SwitchLeft">
+    <keyboard-shortcut first-keystroke="control alt LEFT" />
+  </action>
+  <action id="SwitchRight">
+    <keyboard-shortcut first-keystroke="control alt RIGHT" />
+  </action>
+  <action id="SwitchUp">
+    <keyboard-shortcut first-keystroke="control alt UP" />
+  </action>
+</keymap>
+

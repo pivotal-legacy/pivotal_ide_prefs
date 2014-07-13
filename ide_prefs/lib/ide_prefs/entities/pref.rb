@@ -1,7 +1,10 @@
 require "ide_prefs/entities"
 
 class IdePrefs::Entities::Pref
-  attr_reader :id
+  attr_reader(
+    :id,
+    :location,
+  )
 
   def initialize(id: nil, location: nil)
     @id = id

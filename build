@@ -1,3 +1,8 @@
-for proj in $( ls -F | grep "/" ); do
-    pushd $proj; echo $proj; rake; popd;
-done
+#!/usr/bin/env ruby
+
+Dir["*"].each do |dir|
+  if File.directory?(dir) && Dir.entries(dir).include?("Rakefile")
+    puts "Building #{dir}"
+    system "cd #{dir}; bundle exec rake"
+  end
+end

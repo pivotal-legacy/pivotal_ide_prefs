@@ -1,0 +1,3 @@
+for proj in $( ls -F | grep "/" ); do
+    pushd $proj; echo $proj; rake; popd;
+done

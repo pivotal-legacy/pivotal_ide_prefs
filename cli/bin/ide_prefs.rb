@@ -30,8 +30,19 @@ OptionParser.new do |opts|
   end
 end.parse!
 
-IdePrefs::Commands::InstallPrefs.new(
-  user_prefs_repo: options[:user_prefs_repo],
-  pivotal_prefs_repo: options[:pivotal_prefs_repo],
-  backup_prefs_repo: options[:backup_prefs_repo],
-).execute
+case ARGV.last
+  when "install"
+    command = IdePrefs::Commands::InstallPrefs.new(
+      user_prefs_repo: options[:user_prefs_repo],
+      pivotal_prefs_repo: options[:pivotal_prefs_repo],
+      backup_prefs_repo: options[:backup_prefs_repo],
+    )
+  when "uninstall"
+    command = IdePrefs::Commands::UninstallPrefs.new(
+      user_prefs_repo: options[:user_prefs_repo],
+      pivotal_prefs_repo: options[:pivotal_prefs_repo],
+      backup_prefs_repo: options[:backup_prefs_repo],
+    )
+end
+
+command.execute

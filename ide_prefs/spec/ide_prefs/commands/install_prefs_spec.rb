@@ -43,34 +43,6 @@ module IdePrefs
       let(:backup_prefs_repo)  { BackupPrefsRepoSpy.new }
       let(:pivotal_prefs_repo) { PivotalPrefsRepoStub.new(prefs: ["a pref"]) }
 
-      class BackupPrefsRepoSpy
-        def back_up_prefs(prefs)
-          @backed_up = prefs
-        end
-
-        def has_backed_up_prefs?(prefs)
-          prefs == @backed_up
-        end
-      end
-
-      class UserPrefsRepoSpy
-        def initialize(matching_prefs: nil)
-          @matching_prefs = matching_prefs
-        end
-
-        def find_matching_prefs(*)
-          @matching_prefs
-        end
-
-        def install_prefs(prefs)
-          @installed = prefs
-        end
-
-        def has_installed_prefs?(prefs)
-          prefs == @installed
-        end
-      end
-
       class PivotalPrefsRepoStub
         attr_reader :all
 

@@ -16,6 +16,10 @@ module Persistence
         FileUtils.touch(path_to_pref)
       end
 
+      def destroy_file(relative_path)
+        FileUtils.remove(absolute_path_in_database(relative_path))
+      end
+
       def symlink(relative_path, absolute_path)
         abs_path_in_db_for_file = absolute_path_in_database(relative_path)
         prepare_home_for_file(abs_path_in_db_for_file)

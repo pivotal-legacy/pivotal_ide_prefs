@@ -13,9 +13,15 @@ module Persistence
       end
 
       def install_prefs(prefs)
+        destroy_prefs(find_matching_prefs(prefs))
+
         prefs.each do |pref|
           file_database.symlink(pref.id, pref.location)
         end
+      end
+
+      def destroy_installed_prefs
+        destroy_prefs(installed_prefs)
       end
 
       def create_prefs(prefs)
@@ -46,6 +52,12 @@ module Persistence
       attr_reader(
         :file_database,
       )
+
+      def destroy_prefs(prefs)
+        prefs.each do |pref|
+          file_database.destroy_file(pref.id)
+        end
+      end
 
       def convert_files_to_prefs(files)
         files.map do |file|

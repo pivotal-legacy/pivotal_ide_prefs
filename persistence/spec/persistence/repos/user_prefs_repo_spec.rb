@@ -29,5 +29,19 @@ module Persistence::Repos
       expect(repo.all).to include pref
       expect(repo.installed_prefs).to include pref
     end
+
+    it "does not break if you attempt to install the same pref twice" do
+      pivotal_prefs_repo = PivotalPrefsRepo.new
+      pivotal_prefs_repo.put(IdePrefs::Entities::Pref.new(id: "1"))
+
+      pivotal_pref = pivotal_prefs_repo.all.first
+
+      user_prefs_repo = UserPrefsRepo.new
+
+      expect {
+        user_prefs_repo.install_prefs([pivotal_pref])
+        user_prefs_repo.install_prefs([pivotal_pref])
+      }.not_to raise_exception
+    end
   end
 end

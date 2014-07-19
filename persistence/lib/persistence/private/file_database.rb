@@ -10,21 +10,20 @@ module Persistence
         @location = location || Dir.mktmpdir
       end
 
-      def create_file(relative_path)
-        path_to_pref = absolute_path_in_database(relative_path)
-        prepare_home_for_file(path_to_pref)
-        FileUtils.touch(path_to_pref)
+      def copy_file(relative_path_in_database, absolute_path_of_original_file)
+        absolute_path_for_new_file = absolute_path_in_database(relative_path_in_database)
+        prepare_home_for_file(absolute_path_for_new_file)
+        FileUtils.copy(absolute_path_of_original_file, absolute_path_for_new_file)
+      end
+
+      def destroy_file(relative_path)
+        FileUtils.remove(absolute_path_in_database(relative_path))
       end
 
       def symlink(relative_path, absolute_path)
         abs_path_in_db_for_file = absolute_path_in_database(relative_path)
         prepare_home_for_file(abs_path_in_db_for_file)
         FileUtils.symlink(absolute_path, abs_path_in_db_for_file)
-      end
-
-      def copy(relative_path, absolute_path)
-        prepare_home_for_file(absolute_path_in_database(relative_path))
-        FileUtils.copy(absolute_path, absolute_path_in_database(relative_path))
       end
 
       def files_matching_relative_paths(paths)
@@ -45,9 +44,12 @@ module Persistence
 
       def convert_relative_paths_to_file_objects(relative_paths)
         relative_paths.map do |relative_symlink|
+          absolute_path = absolute_path_in_database(relative_symlink)
+
           DatabaseFile.new(
             relative_path: relative_symlink,
-            absolute_path: absolute_path_in_database(relative_symlink)
+            absolute_path: absolute_path,
+            contents: File.read(absolute_path),
           )
         end
       end
@@ -96,11 +98,13 @@ module Persistence
         attr_reader(
           :absolute_path,
           :relative_path,
+          :contents,
         )
 
-        def initialize(relative_path: nil, absolute_path: nil)
-          @relative_path = relative_path
-          @absolute_path = absolute_path
+        def initialize(relative_path: nil, absolute_path: nil, contents: nil)
+          @relative_path  = relative_path
+          @absolute_path  = absolute_path
+          @contents       = contents
         end
       end
     end

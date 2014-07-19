@@ -1,33 +1,47 @@
 require "persistence/repos/user_prefs_repo"
 require "persistence/repos/pivotal_prefs_repo"
+require "support/fake_repo"
 
 module Persistence::Repos
   describe UserPrefsRepo do
+    it "copies prefs into the repo" do
+      pref = pivotal_prefs_repo.all.first
+      user_prefs_repo.copy(pref)
+
+      expect(user_prefs_repo.all.first.contents).to eq pref.contents
+      expect(pref.contents).not_to be_nil
+    end
+
+
     it "finds prefs with matching ids" do
-      pref_in_repo = IdePrefs::Entities::Pref.new(id: "1")
-      pref_not_in_repo = IdePrefs::Entities::Pref.new(id: "2")
+      pref_in_repo = pivotal_prefs_repo.all.first
+      pref_not_in_repo = pivotal_prefs_repo.all.last
 
-      repo = UserPrefsRepo.new
-      repo.put(pref_in_repo)
+      user_prefs_repo.copy(pref_in_repo)
 
-      matching_prefs = UserPrefsRepo.new(repo.config).find_matching_prefs([pref_in_repo, pref_not_in_repo])
-
+      matching_prefs = user_prefs_repo.find_matching_prefs([pref_in_repo, pref_not_in_repo])
       expect(matching_prefs).to include pref_in_repo
       expect(matching_prefs).not_to include pref_not_in_repo
     end
 
     it "installs prefs" do
-      pivotal_prefs_repo = PivotalPrefsRepo.new
-      pivotal_prefs_repo.put(IdePrefs::Entities::Pref.new(id: "1"))
-
       pref = pivotal_prefs_repo.all.first
+      user_prefs_repo.install_prefs([pref])
 
-      repo = UserPrefsRepo.new
-
-      repo.install_prefs([pref])
-
-      expect(repo.all).to include pref
-      expect(repo.installed_prefs).to include pref
+      expect(user_prefs_repo.all).to include pref
+      expect(user_prefs_repo.installed_prefs).to include pref
     end
+
+    it "does not break if you attempt to install the same pref twice" do
+      pivotal_pref = pivotal_prefs_repo.all.first
+
+      expect {
+        user_prefs_repo.install_prefs([pivotal_pref])
+        user_prefs_repo.install_prefs([pivotal_pref])
+      }.not_to raise_exception
+    end
+
+    let(:pivotal_prefs_repo) { PivotalPrefsRepo.new(location: Spec::Support::FakeRepo.location) }
+    let(:user_prefs_repo) { UserPrefsRepo.new }
   end
 end

@@ -13,7 +13,7 @@ module IdePrefs
 
       def execute
         user_prefs_repo.destroy_installed_prefs
-        user_prefs_repo.create_prefs(backup_prefs_repo.all)
+        user_prefs_repo.copy_prefs(backup_prefs_repo.all)
       end
 
       private

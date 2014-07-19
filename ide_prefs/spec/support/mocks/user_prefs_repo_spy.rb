@@ -14,12 +14,12 @@ module Spec
           @installed = prefs
         end
 
-        def create_prefs(prefs)
-          @created = prefs
+        def copy_prefs(prefs)
+          @copied = prefs
         end
 
-        def has_created?(prefs)
-          @created == prefs
+        def has_copied?(prefs)
+          @copied == prefs
         end
 
         def destroy_installed_prefs

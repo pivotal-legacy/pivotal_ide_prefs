@@ -17,7 +17,7 @@ module Persistence
         destroy_prefs(installed_prefs)
       end
 
-      def create_prefs(prefs)
+      def copy_prefs(prefs)
         prefs.each do |pref|
           copy(pref)
         end

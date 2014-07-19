@@ -15,7 +15,7 @@ module IdePrefs::Commands
     it "restores any backed up prefs" do
       execute_uninstall
 
-      expect(user_prefs_repo).to have_created(backup_prefs_repo.all)
+      expect(user_prefs_repo).to have_copied(backup_prefs_repo.all)
     end
 
     let(:user_prefs_repo) { Spec::Support::Mocks::UserPrefsRepoSpy.new }

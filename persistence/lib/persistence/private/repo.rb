@@ -9,7 +9,7 @@ module Persistence
         @file_database = Persistence::Private::FileDatabase.new(location: location)
       end
 
-      def put(pref)
+      def copy(pref)
         file_database.copy_file(pref.id, pref.location)
       end
 

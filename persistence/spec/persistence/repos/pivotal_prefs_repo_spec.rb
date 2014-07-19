@@ -8,7 +8,7 @@ module Persistence::Repos
       fresh_repo = PivotalPrefsRepo.new
       pref = populated_repo.all.first
 
-      fresh_repo.put(pref)
+      fresh_repo.copy(pref)
 
       expect(PivotalPrefsRepo.new(fresh_repo.config).all).to include pref
     end

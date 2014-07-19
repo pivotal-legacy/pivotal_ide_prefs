@@ -7,7 +7,7 @@ module Persistence
     class BackupPrefsRepo < Private::Repo
       def back_up_prefs(prefs)
         prefs.each do |pref|
-          put(pref)
+          copy(pref)
         end
       end
     end

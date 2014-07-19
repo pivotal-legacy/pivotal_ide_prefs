@@ -19,7 +19,7 @@ module Persistence
 
       def create_prefs(prefs)
         prefs.each do |pref|
-          put(pref)
+          copy(pref)
         end
       end
 

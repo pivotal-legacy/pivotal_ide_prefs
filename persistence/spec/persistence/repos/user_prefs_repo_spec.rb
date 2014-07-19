@@ -6,7 +6,7 @@ module Persistence::Repos
   describe UserPrefsRepo do
     it "copies prefs into the repo" do
       pref = pivotal_prefs_repo.all.first
-      user_prefs_repo.put(pref)
+      user_prefs_repo.copy(pref)
 
       expect(user_prefs_repo.all.first.contents).to eq pref.contents
       expect(pref.contents).not_to be_nil
@@ -17,7 +17,7 @@ module Persistence::Repos
       pref_in_repo = pivotal_prefs_repo.all.first
       pref_not_in_repo = pivotal_prefs_repo.all.last
 
-      user_prefs_repo.put(pref_in_repo)
+      user_prefs_repo.copy(pref_in_repo)
 
       matching_prefs = user_prefs_repo.find_matching_prefs([pref_in_repo, pref_not_in_repo])
       expect(matching_prefs).to include pref_in_repo

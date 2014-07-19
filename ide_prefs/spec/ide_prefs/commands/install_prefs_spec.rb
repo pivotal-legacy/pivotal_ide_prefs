@@ -1,4 +1,7 @@
 require "ide_prefs/commands/install_prefs"
+require "support/mocks/backup_prefs_repo_spy"
+require "support/mocks/user_prefs_repo_spy"
+require "support/mocks/pivotal_prefs_repo_stub"
 
 module IdePrefs
   module Commands
@@ -39,45 +42,9 @@ module IdePrefs
       end
 
       let(:matching_prefs)     { [] }
-      let(:user_prefs_repo)    { UserPrefsRepoSpy.new(matching_prefs: matching_prefs) }
-      let(:backup_prefs_repo)  { BackupPrefsRepoSpy.new }
-      let(:pivotal_prefs_repo) { PivotalPrefsRepoStub.new(prefs: ["a pref"]) }
-
-      class BackupPrefsRepoSpy
-        def back_up_prefs(prefs)
-          @backed_up = prefs
-        end
-
-        def has_backed_up_prefs?(prefs)
-          prefs == @backed_up
-        end
-      end
-
-      class UserPrefsRepoSpy
-        def initialize(matching_prefs: nil)
-          @matching_prefs = matching_prefs
-        end
-
-        def find_matching_prefs(*)
-          @matching_prefs
-        end
-
-        def install_prefs(prefs)
-          @installed = prefs
-        end
-
-        def has_installed_prefs?(prefs)
-          prefs == @installed
-        end
-      end
-
-      class PivotalPrefsRepoStub
-        attr_reader :all
-
-        def initialize(prefs: nil)
-          @prefs = prefs
-        end
-      end
+      let(:user_prefs_repo)    { Spec::Support::Mocks::UserPrefsRepoSpy.new(matching_prefs: matching_prefs) }
+      let(:backup_prefs_repo)  { Spec::Support::Mocks::BackupPrefsRepoSpy.new }
+      let(:pivotal_prefs_repo) { Spec::Support::Mocks::PivotalPrefsRepoStub.new(prefs: ["a pref"]) }
     end
   end
 end

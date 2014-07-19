@@ -18,6 +18,12 @@ module Persistence
         end
       end
 
+      def create_prefs(prefs)
+        prefs.each do |pref|
+          put(pref)
+        end
+      end
+
       def config
         { location: file_database.location }
       end

@@ -8,7 +8,7 @@ module IdePrefs
       end
 
       def execute
-        backup_user_prefs
+        back_up_user_prefs
         install_pivotal_prefs
       end
 
@@ -19,12 +19,9 @@ module IdePrefs
         :backup_prefs_repo,
       )
 
-      def backup_user_prefs
-        backup_prefs_repo.back_up_prefs(matching_user_prefs)
-      end
-
-      def matching_user_prefs
-        user_prefs_repo.find_matching_prefs(pivotal_prefs_repo.all)
+      def back_up_user_prefs
+        existing_prefs = user_prefs_repo.find_matching_prefs(pivotal_prefs_repo.all)
+        backup_prefs_repo.back_up_prefs(existing_prefs)
       end
 
       def install_pivotal_prefs

@@ -12,8 +12,8 @@ module IdePrefs
       end
 
       def execute
-        user_prefs_repo.destroy_installed_prefs
-        user_prefs_repo.copy_prefs(backup_prefs_repo.all)
+        remove_installed_prefs
+        restore_backed_up_prefs
       end
 
       private
@@ -22,6 +22,14 @@ module IdePrefs
         :pivotal_prefs_repo,
         :backup_prefs_repo,
       )
+
+      def restore_backed_up_prefs
+        user_prefs_repo.copy_prefs(backup_prefs_repo.all)
+      end
+
+      def remove_installed_prefs
+        user_prefs_repo.destroy_installed_prefs
+      end
     end
   end
 end

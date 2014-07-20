@@ -15,7 +15,7 @@ OptionParser.new do |opts|
   opts.on("--ide IDE") do |ide|
     case ide.downcase
     when "rubymine"
-      rubymine_source = File.expand_path(File.join(__dir__, "..", "..", "pref_sources", "RubyMineXX"))
+      rubymine_source = File.expand_path(File.join(__dir__, "..", "..", "pref_sources", "RubyMine"))
 
       options[:user_prefs_repo]    = Persistence::Repos::UserPrefsRepo.new(location: File.expand_path(File.join("~", "Library", "Preferences", "RubyMine60")))
       options[:backup_prefs_repo]  = Persistence::Repos::BackupPrefsRepo.new(location: File.expand_path(File.join("~", ".pivotal_ide_prefs", "backups", "RubyMine60")))

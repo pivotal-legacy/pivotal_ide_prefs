@@ -4,9 +4,12 @@ require "optparse"
 
 $LOAD_PATH.unshift "../ide_prefs/lib"
 $LOAD_PATH.unshift "../persistence/lib"
+$LOAD_PATH.unshift "../log/lib"
+$LOAD_PATH.unshift "lib"
 
 require "ide_prefs"
 require "persistence"
+require "cli/logging"
 
 options = {}
 

@@ -23,12 +23,12 @@ module IdePrefs
         :backup_prefs_repo,
       )
 
-      def restore_backed_up_prefs
-        user_prefs_repo.copy_prefs(backup_prefs_repo.all)
-      end
-
       def remove_installed_prefs
         user_prefs_repo.destroy_installed_prefs
+      end
+
+      def restore_backed_up_prefs
+        user_prefs_repo.copy_prefs(backup_prefs_repo.all)
       end
     end
   end

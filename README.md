@@ -1,6 +1,6 @@
 # Pivotal IDE Prefs
 
-This repo provides both a superset of the Mac OS X 10.5+ keybindings for JetBrains IDEs, it also gives your team a workflow to track team-specific IDE preferences over time.
+This repo provides both a superset of the Mac OS X 10.5+ keybindings for JetBrains IDEs, as well as a team-centric workflow for tracking and syncing IDE customizations over time.
 
 ## Requires
 

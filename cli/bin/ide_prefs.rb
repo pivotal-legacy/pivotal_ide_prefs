@@ -21,7 +21,7 @@ OptionParser.new do |opts|
       options[:backup_prefs_repo]  = Persistence::Repos::BackupPrefsRepo.new(location: File.expand_path(File.join("~", ".pivotal_ide_prefs", "backups", "RubyMine60")))
       options[:pivotal_prefs_repo] = Persistence::Repos::PivotalPrefsRepo.new(location: rubymine_source)
     else
-      raise "Unkown IDE"
+      raise "Unknown IDE"
     end
   end
 

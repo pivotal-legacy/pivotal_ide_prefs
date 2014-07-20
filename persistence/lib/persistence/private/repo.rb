@@ -31,7 +31,7 @@ module Persistence
           IdePrefs::Entities::Pref.new(
             id: file.relative_path,
             location: file.absolute_path,
-            contents: file.contents,
+            content_fetcher: -> { file.contents },
           )
         end
       end

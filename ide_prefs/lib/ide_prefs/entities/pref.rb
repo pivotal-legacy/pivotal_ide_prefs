@@ -4,13 +4,16 @@ class IdePrefs::Entities::Pref
   attr_reader(
     :id,
     :location,
-    :contents,
   )
 
-  def initialize(id: nil, location: nil, contents: nil)
+  def initialize(id: nil, location: nil, content_fetcher: ->{})
     @id = id
     @location = location
-    @contents = contents
+    @content_fetcher = content_fetcher
+  end
+
+  def contents
+    @content_fetcher.call
   end
 
   def ==(other_pref)

@@ -49,7 +49,7 @@ module Persistence
           DatabaseFile.new(
             relative_path: relative_symlink,
             absolute_path: absolute_path,
-            contents: File.read(absolute_path),
+            content_fetcher: -> { File.read(absolute_path) },
           )
         end
       end
@@ -98,13 +98,16 @@ module Persistence
         attr_reader(
           :absolute_path,
           :relative_path,
-          :contents,
         )
 
-        def initialize(relative_path: nil, absolute_path: nil, contents: nil)
-          @relative_path  = relative_path
-          @absolute_path  = absolute_path
-          @contents       = contents
+        def initialize(relative_path: nil, absolute_path: nil, content_fetcher: ->{})
+          @relative_path   = relative_path
+          @absolute_path   = absolute_path
+          @content_fetcher = content_fetcher
+        end
+
+        def contents
+          @content_fetcher.call
         end
       end
     end

@@ -23,10 +23,20 @@ module Persistence
         end
       end
 
-      def find_matching_prefs(prefs_to_match)
+      def find_matching_uninstalled_prefs(prefs_to_match)
         prefs_to_match_relative_paths = prefs_to_match.collect(&:id)
 
-        convert_files_to_prefs file_database.files_matching_relative_paths(prefs_to_match_relative_paths)
+        convert_files_to_prefs file_database.regular_files_matching_relative_paths(prefs_to_match_relative_paths)
+      end
+
+      def find_matching_installed_prefs(prefs_to_match)
+        prefs_to_match_relative_paths = prefs_to_match.collect(&:id)
+
+        convert_files_to_prefs file_database.symlink_files_matching_relative_paths(prefs_to_match_relative_paths)
+      end
+
+      def find_matching_prefs(prefs_to_match)
+        find_matching_uninstalled_prefs(prefs_to_match) + find_matching_installed_prefs(prefs_to_match)
       end
 
       def installed_prefs

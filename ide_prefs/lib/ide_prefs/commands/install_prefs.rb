@@ -20,7 +20,7 @@ module IdePrefs
       )
 
       def back_up_user_prefs
-        existing_prefs = user_prefs_repo.find_matching_prefs(pivotal_prefs_repo.all)
+        existing_prefs = user_prefs_repo.find_matching_uninstalled_prefs(pivotal_prefs_repo.all)
         backup_prefs_repo.back_up_prefs(existing_prefs)
       end
 

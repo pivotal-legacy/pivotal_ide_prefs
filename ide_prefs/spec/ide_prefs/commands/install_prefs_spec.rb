@@ -6,31 +6,20 @@ require "support/mocks/pivotal_prefs_repo_stub"
 module IdePrefs
   module Commands
     describe InstallPrefs do
-      context "the user has not already installed the preferences" do
-        before do
-          def user_prefs_repo.installed?(*)
-            false
-          end
-        end
+      context "there are matching prefs already in the user prefs repo" do
+        let(:matching_uninstalled_prefs) { ["a fake matching pref!"] }
 
-        context "there are matching prefs already in the user prefs repo" do
-          let(:matching_prefs) { ["a fake matching pref!"] }
-
-          it "backs up matching user prefs" do
-            execute
-
-            expect(backup_prefs_repo).to have_backed_up_prefs(matching_prefs)
-          end
-        end
-
-        it "installs the source prefs" do
+        it "backs up matching user prefs" do
           execute
 
-          expect(user_prefs_repo).to have_installed_prefs(pivotal_prefs_repo.all)
+          expect(backup_prefs_repo).to have_backed_up_prefs(matching_uninstalled_prefs)
         end
       end
 
-      context "the source repository has preferences that are already installed" do
+      it "installs the source prefs" do
+        execute
+
+        expect(user_prefs_repo).to have_installed_prefs(pivotal_prefs_repo.all)
       end
 
       def execute
@@ -41,9 +30,9 @@ module IdePrefs
         ).execute
       end
 
-      let(:matching_prefs)     { [] }
-      let(:user_prefs_repo)    { Spec::Support::Mocks::UserPrefsRepoSpy.new(matching_prefs: matching_prefs) }
-      let(:backup_prefs_repo)  { Spec::Support::Mocks::BackupPrefsRepoSpy.new }
+      let(:matching_uninstalled_prefs) { [] }
+      let(:user_prefs_repo) { Spec::Support::Mocks::UserPrefsRepoSpy.new(matching_uninstalled_prefs: matching_uninstalled_prefs) }
+      let(:backup_prefs_repo) { Spec::Support::Mocks::BackupPrefsRepoSpy.new }
       let(:pivotal_prefs_repo) { Spec::Support::Mocks::PivotalPrefsRepoStub.new(prefs: ["a pref"]) }
     end
   end

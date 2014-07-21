@@ -2,12 +2,12 @@ module Spec
   module Support
     module Mocks
       class UserPrefsRepoSpy
-        def initialize(matching_prefs: nil)
-          @matching_prefs = matching_prefs
+        def initialize(matching_uninstalled_prefs: nil)
+          @matching_uninstalled_prefs = matching_uninstalled_prefs
         end
 
-        def find_matching_prefs(*)
-          @matching_prefs
+        def find_matching_uninstalled_prefs(*)
+          @matching_uninstalled_prefs
         end
 
         def install_prefs(prefs)

@@ -13,15 +13,16 @@ module Persistence::Repos
     end
 
 
-    it "finds prefs with matching ids" do
+    it "finds uninstalled prefs with matching ids" do
       pref_in_repo = pivotal_prefs_repo.all.first
-      pref_not_in_repo = pivotal_prefs_repo.all.last
+      pref_for_install = pivotal_prefs_repo.all.last
 
       user_prefs_repo.copy(pref_in_repo)
+      user_prefs_repo.install_prefs([pref_for_install])
 
-      matching_prefs = user_prefs_repo.find_matching_prefs([pref_in_repo, pref_not_in_repo])
+      matching_prefs = user_prefs_repo.find_matching_uninstalled_prefs([pref_in_repo, pref_for_install])
       expect(matching_prefs).to include pref_in_repo
-      expect(matching_prefs).not_to include pref_not_in_repo
+      expect(matching_prefs).not_to include pref_for_install
     end
 
     it "installs prefs" do

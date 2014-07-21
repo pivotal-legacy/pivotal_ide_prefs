@@ -26,8 +26,14 @@ module Persistence
         FileUtils.symlink(absolute_path, abs_path_in_db_for_file)
       end
 
-      def files_matching_relative_paths(paths)
-        all.select do |file|
+      def regular_files_matching_relative_paths(paths)
+        regular_files.select do |file|
+          paths.include?(file.relative_path)
+        end
+      end
+
+      def symlink_files_matching_relative_paths(paths)
+        symlinks.select do |file|
           paths.include?(file.relative_path)
         end
       end
@@ -38,6 +44,10 @@ module Persistence
 
       def all
         convert_relative_paths_to_file_objects relative_paths
+      end
+
+      def regular_files
+        all - symlinks
       end
 
       private
@@ -108,6 +118,14 @@ module Persistence
 
         def contents
           @content_fetcher.call
+        end
+
+        def eql?(other_file)
+          absolute_path == other_file.absolute_path
+        end
+
+        def hash
+          absolute_path.hash
         end
       end
     end

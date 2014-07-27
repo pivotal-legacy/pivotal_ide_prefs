@@ -53,5 +53,8 @@ bin/cli --ide=[rubymine,intellij] uninstall
 * ~~Uninstall command~~
 * ~~Make commands Idempodent~~
 * ~~Basic Logging~~
+* ~~Specify log levels at the command line~~
 * IntelliJ prefs
-* Specify log levels at the command line
+* Appcode prefs
+* PyCharm prefs
+* WebStorm prefs

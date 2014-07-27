@@ -11,39 +11,35 @@ require "ide_prefs"
 require "persistence"
 require "cli"
 
-locations = {}
+options = {}
 
 OptionParser.new do |opts|
-  opts.on("--ide IDE") do |ide|
-    locations.merge! Module.const_get("Cli::Ide::#{ide.capitalize}").new.locations
+  opts.on("--ide=IDE") do |ide|
+    options[:user_prefs_repo_location] = Module.const_get("Cli::Ide::#{ide.capitalize}").new.user_prefs_repo_location
+    options[:ide_name] = ide
   end
 
   opts.on("--user-prefs-location=PATH") do |location|
-    locations[:user_prefs_repo] = location
+    options[:user_prefs_repo_location] = location
   end
 
+
   opts.on("--backup-prefs-location=PATH") do |location|
-    locations[:backup_prefs_repo] = location
+    options[:backup_prefs_repo_location] = location
   end
 end.parse!
 
-if locations[:pivotal_prefs_repo].nil?
-  puts "You must specify an IDE. Run `ide_prefs --help` for more information."
+if options[:ide_name].nil?
+  puts "You must specify an IDE with the --ide switch. Use the `--help` switch for more information."
   exit 1
 end
 
-command = nil
+repo_configuration = Cli::Configuration::RepoConfiguration.new(options)
 
-repos = Cli::Configuration::Repos(locations)
+repos = {
+  user_prefs_repo:    Persistence::Repos::UserPrefsRepo.new(location: repo_configuration.user_prefs_repo_location),
+  backup_prefs_repo:  Persistence::Repos::BackupPrefsRepo.new(location: repo_configuration.backup_prefs_repo_location),
+  pivotal_prefs_repo: Persistence::Repos::PivotalPrefsRepo.new(location: repo_configuration.pivotal_prefs_repo_location),
+}
 
-case ARGV.last
-  when "install"
-    command = IdePrefs::Commands::InstallPrefs.new repos
-  when "uninstall"
-    command = IdePrefs::Commands::UninstallPrefs.new repos
-  else
-    puts "Unknown command."
-    exit 1
-end
-
-command.execute
+Cli::CommandFactory.new(ARGV.last).command.new(repos).execute

@@ -1,7 +1,7 @@
 require "ide_prefs/commands/uninstall_prefs"
-require "support/mocks/backup_prefs_repo_spy"
-require "support/mocks/user_prefs_repo_spy"
-require "support/mocks/pivotal_prefs_repo_stub"
+require "support/mocks/mock_backup_prefs_repo"
+require "support/mocks/mock_user_prefs_repo"
+require "support/mocks/mock_pivotal_prefs_repo"
 
 
 module IdePrefs::Commands
@@ -9,18 +9,18 @@ module IdePrefs::Commands
     it "destroys any installed prefs" do
       execute_uninstall
 
-      expect(user_prefs_repo).to have_destroyed_installed_prefs
+      expect(user_prefs_repo.installed_prefs).to be_empty
     end
 
     it "restores any backed up prefs" do
       execute_uninstall
 
-      expect(user_prefs_repo).to have_copied(backup_prefs_repo.all)
+      expect(user_prefs_repo.all).to include(*backup_prefs_repo.all)
     end
 
-    let(:user_prefs_repo) { Spec::Support::Mocks::UserPrefsRepoSpy.new }
-    let(:pivotal_prefs_repo) { Spec::Support::Mocks::PivotalPrefsRepoStub.new(prefs: "prefs!") }
-    let(:backup_prefs_repo) { Spec::Support::Mocks::BackupPrefsRepoSpy.new(prefs: "backed up prefs!") }
+    let(:user_prefs_repo) { Spec::Support::Mocks::MockUserPrefsRepo.new }
+    let(:pivotal_prefs_repo) { Spec::Support::Mocks::MockPivotalPrefsRepo.new(prefs: ["prefs!"]) }
+    let(:backup_prefs_repo) { Spec::Support::Mocks::MockBackupPrefsRepo.new(prefs: ["backed up prefs!"]) }
 
     def execute_uninstall
       UninstallPrefs.new(

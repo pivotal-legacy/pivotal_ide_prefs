@@ -1,8 +1,8 @@
 module Spec
   module Support
     module Mocks
-      class BackupPrefsRepoSpy
-        def initialize(prefs: nil)
+      class MockBackupPrefsRepo
+        def initialize(prefs: [])
           @prefs = prefs
         end
 
@@ -11,11 +11,7 @@ module Spec
         end
 
         def back_up_prefs(prefs)
-          @backed_up = prefs
-        end
-
-        def has_backed_up_prefs?(prefs)
-          prefs == @backed_up
+          @prefs += prefs
         end
       end
     end

@@ -1,7 +1,7 @@
 module Spec
   module Support
     module Mocks
-      class PivotalPrefsRepoStub
+      class MockPivotalPrefsRepo
         attr_reader :all
 
         def initialize(prefs: nil)

@@ -1,7 +1,7 @@
 require "ide_prefs/commands/install_prefs"
-require "support/mocks/backup_prefs_repo_spy"
-require "support/mocks/user_prefs_repo_spy"
-require "support/mocks/pivotal_prefs_repo_stub"
+require "support/mocks/mock_backup_prefs_repo"
+require "support/mocks/mock_user_prefs_repo"
+require "support/mocks/mock_pivotal_prefs_repo"
 
 module IdePrefs
   module Commands
@@ -12,14 +12,14 @@ module IdePrefs
         it "backs up matching user prefs" do
           execute
 
-          expect(backup_prefs_repo).to have_backed_up_prefs(matching_uninstalled_prefs)
+          expect(backup_prefs_repo.all).to include(*matching_uninstalled_prefs)
         end
       end
 
       it "installs the source prefs" do
         execute
 
-        expect(user_prefs_repo).to have_installed_prefs(pivotal_prefs_repo.all)
+        expect(user_prefs_repo.installed_prefs).to include(*pivotal_prefs_repo.all)
       end
 
       def execute
@@ -31,9 +31,9 @@ module IdePrefs
       end
 
       let(:matching_uninstalled_prefs) { [] }
-      let(:user_prefs_repo) { Spec::Support::Mocks::UserPrefsRepoSpy.new(matching_uninstalled_prefs: matching_uninstalled_prefs) }
-      let(:backup_prefs_repo) { Spec::Support::Mocks::BackupPrefsRepoSpy.new }
-      let(:pivotal_prefs_repo) { Spec::Support::Mocks::PivotalPrefsRepoStub.new(prefs: ["a pref"]) }
+      let(:user_prefs_repo) { Spec::Support::Mocks::MockUserPrefsRepo.new(matching_uninstalled_prefs: matching_uninstalled_prefs) }
+      let(:backup_prefs_repo) { Spec::Support::Mocks::MockBackupPrefsRepo.new }
+      let(:pivotal_prefs_repo) { Spec::Support::Mocks::MockPivotalPrefsRepo.new(prefs: ["a pref"]) }
     end
   end
 end

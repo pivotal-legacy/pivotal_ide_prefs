@@ -1,5 +1,5 @@
 Gem::Specification.new do |spec|
-  spec.name = "log"
+  spec.name = "logging"
   spec.author = ""
   spec.version = "0"
   spec.summary = ""

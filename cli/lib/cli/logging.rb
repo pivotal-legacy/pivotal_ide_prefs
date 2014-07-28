@@ -1,4 +1,4 @@
-require "log"
+require "logging"
 
 logs = []
 
@@ -24,6 +24,6 @@ Cli::Logger = Class.new do
       "#{progname} #{datetime}: #{severity} - #{msg}\n"
     end
 
-    Log.new(logs: LOGS, logger: logger).start
+    Logging.new(logs: LOGS, logger: logger).start
   end
 end

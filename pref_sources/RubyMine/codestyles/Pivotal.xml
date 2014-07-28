@@ -71,7 +71,6 @@
   </codeStyleSettings>
   <codeStyleSettings language="ruby">
     <option name="ALIGN_MULTILINE_PARAMETERS" value="false" />
-    <option name="INDENT_WHEN_CASES" value="false" />
     <indentOptions>
       <option name="CONTINUATION_INDENT_SIZE" value="2" />
     </indentOptions>

@@ -1,6 +1,6 @@
 require "logger"
 
-class Log
+class Logging
   def initialize(logger: Logger.new(STDOUT), logs: [])
     @logger = logger
     @logs = logs

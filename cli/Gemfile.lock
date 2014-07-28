@@ -4,9 +4,9 @@ PATH
     ide_prefs (0)
 
 PATH
-  remote: ../log
+  remote: ../logging
   specs:
-    log (0)
+    logging (0)
 
 PATH
   remote: ../persistence
@@ -44,7 +44,7 @@ PLATFORMS
 DEPENDENCIES
   cucumber
   ide_prefs!
-  log!
+  logging!
   persistence!
   rake
   rspec

@@ -1,6 +1,6 @@
-require "log"
+require "logging"
 
-describe Log do
+describe Logging do
   it "hooks into methods before and after they're run" do
     run_order = []
 
@@ -29,7 +29,7 @@ describe Log do
     end
 
     logger = double(:logger)
-    Log.new(logger: logger, logs: [log]).start
+    Logging.new(logger: logger, logs: [log]).start
 
     arg = double(:arg)
     klass_to_log.new.some_method(arg)

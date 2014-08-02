@@ -1,6 +1,6 @@
 require "cli"
 
-class Cli::DoesNotExistCommand
+class Cli::CommandNotSpecified
   def initialize(*)
   end
 

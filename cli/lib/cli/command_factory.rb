@@ -6,7 +6,11 @@ class Cli::CommandFactory
   end
 
   def command
-    Module.const_get(command_string)
+    begin
+      Module.const_get(command_string)
+    rescue
+      Cli::CommandNotFound
+    end
   end
 
   private
@@ -14,7 +18,7 @@ class Cli::CommandFactory
     if @command_name
       "IdePrefs::Commands::#{@command_name.capitalize}Prefs"
     else
-      "Cli::DoesNotExistCommand"
+      "Cli::CommandNotSpecified"
     end
   end
 end

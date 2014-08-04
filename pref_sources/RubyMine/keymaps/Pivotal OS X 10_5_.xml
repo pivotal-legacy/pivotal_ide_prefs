@@ -1,5 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <keymap version="1" name="Pivotal OS X 10.5+" parent="Mac OS X 10.5+">
+  <action id="CloseAllEditors">
+    <keyboard-shortcut first-keystroke="meta alt W" />
+  </action>
   <action id="CloseAllEditorsButActive">
     <keyboard-shortcut first-keystroke="shift meta W" />
   </action>
@@ -9,6 +12,9 @@
   <action id="MoveEditorToOppositeTabGroup">
     <keyboard-shortcut first-keystroke="shift control meta alt LEFT" />
     <keyboard-shortcut first-keystroke="shift control meta alt RIGHT" />
+  </action>
+  <action id="Resume">
+    <keyboard-shortcut first-keystroke="F9" />
   </action>
   <action id="SplitHorizontally">
     <keyboard-shortcut first-keystroke="shift control meta alt DOWN" />
@@ -30,6 +36,9 @@
   </action>
   <action id="SwitchUp">
     <keyboard-shortcut first-keystroke="control alt UP" />
+  </action>
+  <action id="org.jetbrains.plugins.ruby.tasks.rake.actions.RakeTasksPopupAction">
+    <keyboard-shortcut first-keystroke="alt R" />
   </action>
 </keymap>
 

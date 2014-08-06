@@ -8,10 +8,6 @@ module Cli
       end
 
       def to_s
-        latest_version_of_preferences_directory = matching_directories.sort do |a, b|
-          version_number_of_directory(a) <=> version_number_of_directory(b)
-        end.last
-
         latest_version_of_preferences_directory || default
       end
 
@@ -21,6 +17,13 @@ module Cli
         :directories,
         :default,
       )
+
+
+      def latest_version_of_preferences_directory
+        matching_directories.sort do |a, b|
+          version_number_of_directory(a) <=> version_number_of_directory(b)
+        end.last
+      end
 
       def matching_directories
         directories.select { |dir| match_pattern.match(dir) }

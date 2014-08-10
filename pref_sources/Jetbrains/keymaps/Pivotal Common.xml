@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<keymap version="1" name="Pivotal OS X 10.5+" parent="Mac OS X 10.5+">
+<keymap version="1" name="Pivotal Common" parent="Mac OS X 10.5+">
   <action id="CloseAllEditors">
     <keyboard-shortcut first-keystroke="meta alt W" />
   </action>

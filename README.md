@@ -49,6 +49,14 @@ cd /path/to/your/pivotal_ide_prefs/cli
 bin/ide_prefs --ide=[rubymine,intellij] uninstall
 ```
 
+## Contributing New Preferences
+
+If you'd like to add preferences for another IDE, simply: 
+
+0. Create a new folder in the `pref_sources` directory, and add any preferences to it that you want to manage for that IDE into the appropriate folders that the IDE calls for. See the existing folders there for examples.
+0. Create a new IDE class inside cli/lib/cli/ide. This class must respond to a single method, `user_prefs_repo_location`, which tells the installer where to install the preferences to on the system.
+0. Update the README, indicating that another IDE has been added to the installer. 
+
 ## TODO
 
 * ~~Install command~~
@@ -56,7 +64,7 @@ bin/ide_prefs --ide=[rubymine,intellij] uninstall
 * ~~Make commands Idempodent~~
 * ~~Basic Logging~~
 * ~~Specify log levels at the command line~~
-* IntelliJ prefs
+* ~~IntelliJ prefs~~
 * Appcode prefs
 * PyCharm prefs
 * WebStorm prefs

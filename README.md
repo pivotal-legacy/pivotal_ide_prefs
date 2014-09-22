@@ -57,6 +57,23 @@ If you'd like to add preferences for another IDE, simply:
 0. Create a new IDE class inside cli/lib/cli/ide. This class must respond to a single method, `user_prefs_repo_location`, which tells the installer where to install the preferences to on the system.
 0. Update the README, indicating that another IDE has been added to the installer. 
 
+## Migrating from Pivotal-Preferences-RubyMine
+
+If your team is already maintaining their rubymine preferences via the now-deprecated Pivotal-Preferences-RubyMine, simply do the following to migrate:
+
+1. Close RubyMine.
+2. Uninstall the old prefs:
+
+        cd /path/to/your/Pivotal-Preferences-RubyMine
+        ./mineprefs uninstall
+
+3. Copy your old prefs into pivotal\_ide\_prefs. 
+
+        cd /path/to/your/pivotal_ide_prefs
+        cp -r /path/to/your/Pivotal-Preferences-RubyMine/RubyMineXX/* pref_sources/RubyMine/
+
+4. Re-install your preferences using `pivotal_ide_prefs` (see the Installation section above).
+
 ## TODO
 
 * ~~Install command~~

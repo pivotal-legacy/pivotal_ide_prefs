@@ -27,7 +27,7 @@ Then, run the following commands:
 ```sh
 git clone https://github.com/pivotal/pivotal_ide_prefs
 cd pivotal_ide_prefs/cli
-bin/ide_prefs --ide=[rubymine,intellij] install
+bin/ide_prefs --ide=[your ide name e.g. rubymine or intellij] install
 ```
 
 This will install the preferences into your IDE of choice. 

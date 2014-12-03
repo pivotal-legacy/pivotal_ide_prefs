@@ -9,7 +9,7 @@ module Cli
         PreferencesDirectory.new(
           directories:    Dir.glob(File.join(preferences_directory, "*")),
           match_pattern:  /RubyMine.*/,
-          default: File.join(preferences_directory, "RubyMine60"),
+          default: File.join(preferences_directory, "RubyMine70"),
         ).to_s
       end
     end

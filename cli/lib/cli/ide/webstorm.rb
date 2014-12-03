@@ -1,16 +1,14 @@
-require "cli/ide/preferences_directory"
+require "cli/ide/jet_brains_ide"
 
 module Cli
   module Ide
-    class Webstorm
-      def user_prefs_repo_location
-        preferences_directory = File.expand_path(File.join("~", "Library", "Preferences"))
+    class Webstorm < JetBrainsIde
+      def ide_pref_dir_name_without_version
+        "WebStorm"
+      end
 
-        PreferencesDirectory.new(
-          directories:    Dir.glob(File.join(preferences_directory, "WebStorm*")),
-          match_pattern:  /WebStorm.*/,
-          default: File.join(preferences_directory, "WebStorm9"),
-        ).to_s
+      def default_ide_pref_dir_version
+        "9"
       end
     end
   end

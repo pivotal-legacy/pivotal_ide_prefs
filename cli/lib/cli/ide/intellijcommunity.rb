@@ -1,16 +1,14 @@
-require "cli/ide/preferences_directory"
+require "cli/ide/jet_brains_ide"
 
 module Cli
   module Ide
-    class Intellijcommunity
-      def user_prefs_repo_location
-        preferences_directory = File.expand_path(File.join("~", "Library", "Preferences"))
+    class Intellijcommunity < JetBrainsIde
+      def ide_pref_dir_name_without_version
+        "IdeaIC"
+      end
 
-        PreferencesDirectory.new(
-            directories:    Dir.glob(File.join(preferences_directory, "IdeaIC*")),
-            match_pattern:  /IdeaIC.*/,
-            default:        File.join(preferences_directory, "IdeaIC13"),
-        ).to_s
+      def default_ide_pref_dir_version
+        "13"
       end
     end
   end

@@ -7,8 +7,8 @@ module Cli
         preferences_directory = File.expand_path(File.join("~", "Library", "Preferences"))
 
         PreferencesDirectory.new(
-          directories:    Dir.glob(File.join(preferences_directory, "RubyMine*")),
-          match_pattern:  /IntelliJIdea.*/,
+          directories:    Dir.glob(File.join(preferences_directory, "*")),
+          match_pattern:  /RubyMine.*/,
           default: File.join(preferences_directory, "RubyMine60"),
         ).to_s
       end

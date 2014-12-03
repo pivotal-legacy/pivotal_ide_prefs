@@ -84,4 +84,4 @@ If your team is already maintaining their rubymine preferences via the now-depre
 * ~~IntelliJ prefs~~
 * Appcode prefs
 * PyCharm prefs
-* WebStorm prefs
+* ~~WebStorm prefs~~

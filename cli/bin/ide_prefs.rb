@@ -19,7 +19,7 @@ repo_config_options = {}
 logging_options = {log_level: :info}
 
 OptionParser.new do |opts|
-  opts.on("--ide=IDE") do |ide|
+  opts.on("--ide=IDE", ["webstorm", "intellij", "intellijcommunity", "rubymine"], "webstorm, intellij, intellijcommunity, rubymine") do |ide|
     repo_config_options[:user_prefs_repo_location] = Module.const_get("Cli::Ide::#{ide.capitalize}UserPrefDir").new.name
     repo_config_options[:ide_name] = ide
   end
@@ -32,7 +32,7 @@ OptionParser.new do |opts|
     repo_config_options[:backup_prefs_repo_location] = location
   end
 
-  opts.on("--log-level=LEVEL", [:info, :debug, :fatal]) do |level|
+  opts.on("--log-level=LEVEL", ["INFO", "DEBUG", "FATAL"], "INFO, DEBUG, or FATAL") do |level|
     logging_options[:log_level] = level
   end
 end.parse!

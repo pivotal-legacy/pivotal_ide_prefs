@@ -32,7 +32,7 @@ OptionParser.new do |opts|
     repo_config_options[:backup_prefs_repo_location] = location
   end
 
-  opts.on("--log-level=LEVEL", [:info, :debug, :silent]) do |level|
+  opts.on("--log-level=LEVEL", [:info, :debug, :fatal]) do |level|
     logging_options[:log_level] = level
   end
 end.parse!

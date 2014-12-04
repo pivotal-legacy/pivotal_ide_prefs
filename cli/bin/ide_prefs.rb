@@ -1,7 +1,7 @@
 #!/usr/bin/env ruby
 
 unless RUBY_VERSION.to_i >= 2
-  puts "You must use ruby 2.0.0 or greater. OS X Mavericks ships with Ruby 2.0.0 as the system ruby."
+  puts "You must use ruby 2.0.0 or greater. OS X Mavericks and beyond ship with Ruby 2+ as the system ruby."
   exit 1
 end
 

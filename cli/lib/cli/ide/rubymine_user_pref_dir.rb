@@ -7,6 +7,10 @@ module Cli
         "RubyMine"
       end
 
+      def match_pattern
+        /RubyMine*/
+      end
+
       def default_ide_pref_dir_version
         "70"
       end

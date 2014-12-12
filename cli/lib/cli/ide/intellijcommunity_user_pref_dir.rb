@@ -7,6 +7,10 @@ module Cli
         "IdeaIC"
       end
 
+      def match_pattern
+        /IdeaIC.*/
+      end
+
       def default_ide_pref_dir_version
         "13"
       end

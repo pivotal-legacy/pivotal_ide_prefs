@@ -12,6 +12,10 @@ module Cli
           default: File.join(preferences_directory, "#{ide_pref_dir_name_without_version}#{default_ide_pref_dir_version}"),
         ).to_s
       end
+
+      def match_pattern
+        Regexp.new("#{ide_pref_dir_name_without_version}.*")
+      end
     end
   end
 end

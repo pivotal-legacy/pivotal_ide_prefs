@@ -3,7 +3,7 @@ require "cli/ide/preferences_directory"
 module Cli
   module Ide
     class JetBrainsIdeUserPrefDir
-      def name
+      def path
         preferences_directory = File.expand_path(File.join("~", "Library", "Preferences"))
 
         PreferencesDirectory.new(

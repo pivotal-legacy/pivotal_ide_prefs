@@ -10,7 +10,7 @@ To run the installer, you will need Ruby 2.0+.
 
 ## History
 
-Once upon a time, RubyMine shipped with keybindings that made no sense to anyone who had ever used a Mac. Hence, the Pivotal RubyMine preferences were born. Originally just a project for managing RubyMine preferences, it now includes prefernces for multiple JetBrains IDEs. For each IDE, we offer:
+Once upon a time, RubyMine shipped with keybindings that made no sense to anyone who had ever used a Mac. Hence, the Pivotal RubyMine preferences were born. Originally just a project for managing RubyMine preferences, it now includes preferences for multiple JetBrains IDEs. For each IDE, we offer:
 
 * Keymaps (powerful supersets of the JetBrains Mac OS X 10.5+ default keybindings)
 * Pivotal Code Styles

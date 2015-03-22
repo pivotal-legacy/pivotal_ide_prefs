@@ -1,7 +1,7 @@
 module Spec
   module Support
-    module Mocks
-      class MockUserPrefsRepo
+    module Doubles
+      class FakeUserPrefsRepo
         attr_reader(
           :installed_prefs,
         )

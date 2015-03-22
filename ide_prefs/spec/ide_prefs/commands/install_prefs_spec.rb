@@ -1,7 +1,7 @@
 require "ide_prefs/commands/install_prefs"
-require "support/mocks/mock_backup_prefs_repo"
-require "support/mocks/mock_user_prefs_repo"
-require "support/mocks/mock_pivotal_prefs_repo"
+require "support/doubles/fake_backup_prefs_repo"
+require "support/doubles/fake_user_prefs_repo"
+require "support/doubles/fake_pivotal_prefs_repo"
 
 module IdePrefs
   module Commands
@@ -31,9 +31,9 @@ module IdePrefs
       end
 
       let(:matching_uninstalled_prefs) { [] }
-      let(:user_prefs_repo) { Spec::Support::Mocks::MockUserPrefsRepo.new(matching_uninstalled_prefs: matching_uninstalled_prefs) }
-      let(:backup_prefs_repo) { Spec::Support::Mocks::MockBackupPrefsRepo.new }
-      let(:pivotal_prefs_repo) { Spec::Support::Mocks::MockPivotalPrefsRepo.new(prefs: ["a pref"]) }
+      let(:user_prefs_repo) { Spec::Support::Doubles::FakeUserPrefsRepo.new(matching_uninstalled_prefs: matching_uninstalled_prefs) }
+      let(:backup_prefs_repo) { Spec::Support::Doubles::FakeBackupPrefsRepo.new }
+      let(:pivotal_prefs_repo) { Spec::Support::Doubles::FakePivotalPrefsRepo.new(prefs: ["a pref"]) }
     end
   end
 end

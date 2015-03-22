@@ -1,7 +1,7 @@
 module Spec
   module Support
-    module Mocks
-      class MockPivotalPrefsRepo
+    module Doubles
+      class FakePivotalPrefsRepo
         attr_reader :all
 
         def initialize(prefs: nil)

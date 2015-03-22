@@ -1,7 +1,7 @@
 module Spec
   module Support
-    module Mocks
-      class MockBackupPrefsRepo
+    module Doubles
+      class FakeBackupPrefsRepo
         def initialize(prefs: [])
           @prefs = prefs
         end

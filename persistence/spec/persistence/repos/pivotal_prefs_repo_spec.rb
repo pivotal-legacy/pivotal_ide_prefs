@@ -1,16 +1,8 @@
 require "persistence/repos/pivotal_prefs_repo"
-require "support/fake_repo"
+require "ide_prefs_test_support/contracts/pivotal_prefs_repo_contract"
+require "support/pref_factory"
 
-module Persistence::Repos
-  describe PivotalPrefsRepo do
-    it "returns all preferences put into it" do
-      populated_repo = PivotalPrefsRepo.new(location: Spec::Support::FakeRepo.location)
-      fresh_repo = PivotalPrefsRepo.new
-      pref = populated_repo.all.first
-
-      fresh_repo.copy(pref)
-
-      expect(PivotalPrefsRepo.new(fresh_repo.config).all).to include pref
-    end
-  end
-end
+assert_works_like_pivotal_prefs_repo(
+  pref_factory: PrefFactory.new,
+  pivotal_prefs_repo_factory: -> { Persistence::Repos::PivotalPrefsRepo.new },
+)

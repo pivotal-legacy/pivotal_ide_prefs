@@ -1,5 +1,5 @@
 source "https://rubygems.org"
 
-gem "rake"
-gem "rspec"
+gem "ide_prefs", path: "../ide_prefs", require: false
 
+gemspec

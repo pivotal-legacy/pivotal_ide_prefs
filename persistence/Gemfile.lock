@@ -1,3 +1,13 @@
+PATH
+  remote: .
+  specs:
+    persistence (0)
+
+PATH
+  remote: ../ide_prefs
+  specs:
+    ide_prefs (0)
+
 GEM
   remote: https://rubygems.org/
   specs:
@@ -16,5 +26,7 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
+  ide_prefs!
+  persistence!
   rake
   rspec

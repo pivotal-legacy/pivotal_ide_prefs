@@ -1,2 +1,1 @@
--I ../ide_prefs/lib
---color
+--color --format=doc

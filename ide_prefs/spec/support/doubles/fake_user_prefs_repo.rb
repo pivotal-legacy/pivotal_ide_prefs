@@ -6,22 +6,31 @@ module Spec
           :installed_prefs,
         )
 
-        def initialize(matching_uninstalled_prefs: nil, prefs: [], installed_prefs: [])
-          @matching_uninstalled_prefs = matching_uninstalled_prefs
-          @prefs = prefs
-          @installed_prefs = installed_prefs
+        def initialize
+          @prefs = []
+          @installed_prefs = []
+        end
+
+        def uninstalled_prefs
+          @prefs
         end
 
         def all
           @prefs + @installed_prefs
         end
 
-        def find_matching_uninstalled_prefs(*)
-          @matching_uninstalled_prefs
+        def copy(pref)
+          @prefs << pref
+        end
+
+        def find_matching_uninstalled_prefs(match_against)
+          @prefs.select {|p| match_against.include? p }
         end
 
         def install_prefs(prefs)
-          @installed_prefs += prefs
+          prefs.each do |pref|
+            @installed_prefs << pref unless @installed_prefs.include?(pref)
+          end
         end
 
         def copy_prefs(prefs)

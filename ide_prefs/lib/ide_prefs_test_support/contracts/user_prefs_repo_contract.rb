@@ -51,6 +51,10 @@ def assert_works_like_user_prefs_repo(pref_factory: nil, user_prefs_repo_factory
           specify "And it should return it when queried for all installed_prefs" do
             expect(user_prefs_repo.installed_prefs).to include pref
           end
+
+          specify "And it should not return it when queried for all uninstalled prefs" do
+            expect(user_prefs_repo.uninstalled_prefs).not_to include pref
+          end
         end
       end
 

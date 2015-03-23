@@ -23,6 +23,10 @@ module Persistence
         end
       end
 
+      def uninstalled_prefs
+        all - installed_prefs
+      end
+
       def find_matching_uninstalled_prefs(prefs_to_match)
         prefs_to_match_relative_paths = prefs_to_match.collect(&:id)
 

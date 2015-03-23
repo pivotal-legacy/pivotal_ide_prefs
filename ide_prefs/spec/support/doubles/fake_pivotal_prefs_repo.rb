@@ -4,8 +4,12 @@ module Spec
       class FakePivotalPrefsRepo
         attr_reader :all
 
-        def initialize(prefs: nil)
-          @all = prefs
+        def initialize
+          @all = []
+        end
+
+        def copy(pref)
+          @all << pref
         end
       end
     end

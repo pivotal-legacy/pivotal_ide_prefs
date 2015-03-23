@@ -2,38 +2,41 @@ require "ide_prefs/commands/install_prefs"
 require "support/doubles/fake_backup_prefs_repo"
 require "support/doubles/fake_user_prefs_repo"
 require "support/doubles/fake_pivotal_prefs_repo"
+require "support/fake_pref_factory"
 
 module IdePrefs
   module Commands
     describe InstallPrefs do
-      context "there are matching prefs already in the user prefs repo" do
-        let(:matching_uninstalled_prefs) { ["a fake matching pref!"] }
+      context "Given that the pivotal prefs repo includes a pref that already exists in the user prefs repo" do
+        before do
+          @pref = pref_factory.generate_pref
+          pivotal_prefs_repo.copy(@pref)
+          user_prefs_repo.copy(@pref)
+        end
 
-        it "backs up matching user prefs" do
-          execute
+        context "When I install prefs" do
+          before do
+            InstallPrefs.new(
+              user_prefs_repo: user_prefs_repo,
+              pivotal_prefs_repo: pivotal_prefs_repo,
+              backup_prefs_repo: backup_prefs_repo,
+            ).execute
+          end
 
-          expect(backup_prefs_repo.all).to include(*matching_uninstalled_prefs)
+          specify "Then it backs up the user's existing pref" do
+            expect(backup_prefs_repo.all).to include(@pref)
+          end
+
+          specify "And it installs the pivotal pref" do
+            expect(user_prefs_repo.installed_prefs).to include(@pref)
+          end
         end
       end
 
-      it "installs the source prefs" do
-        execute
-
-        expect(user_prefs_repo.installed_prefs).to include(*pivotal_prefs_repo.all)
-      end
-
-      def execute
-        InstallPrefs.new(
-          user_prefs_repo: user_prefs_repo,
-          pivotal_prefs_repo: pivotal_prefs_repo,
-          backup_prefs_repo: backup_prefs_repo,
-        ).execute
-      end
-
-      let(:matching_uninstalled_prefs) { [] }
-      let(:user_prefs_repo) { Spec::Support::Doubles::FakeUserPrefsRepo.new(matching_uninstalled_prefs: matching_uninstalled_prefs) }
+      let(:user_prefs_repo) { Spec::Support::Doubles::FakeUserPrefsRepo.new }
       let(:backup_prefs_repo) { Spec::Support::Doubles::FakeBackupPrefsRepo.new }
-      let(:pivotal_prefs_repo) { Spec::Support::Doubles::FakePivotalPrefsRepo.new(prefs: ["a pref"]) }
+      let(:pivotal_prefs_repo) { Spec::Support::Doubles::FakePivotalPrefsRepo.new }
+      let(:pref_factory) { FakePrefFactory.new }
     end
   end
 end

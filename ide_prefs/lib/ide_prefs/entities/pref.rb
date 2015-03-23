@@ -21,4 +21,12 @@ class IdePrefs::Entities::Pref
 
     id == other_pref.id
   end
+
+  def hash
+    id.to_s.hash
+  end
+
+  def eql?(other)
+    self == other
+  end
 end

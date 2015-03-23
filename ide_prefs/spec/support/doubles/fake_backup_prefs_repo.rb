@@ -6,6 +6,10 @@ module Spec
           @prefs = prefs
         end
 
+        def copy(pref)
+          @prefs << pref
+        end
+
         def all
           @prefs
         end

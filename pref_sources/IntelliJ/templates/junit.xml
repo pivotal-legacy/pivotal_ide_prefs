@@ -1,0 +1,32 @@
+<templateSet group="JUnit">
+  <template name="test" value="@org.junit.Test&#10;public void $1$() {&#10;    $END$&#10;}" description="JUnit Test" toReformat="true" toShortenFQNames="true" useStaticImport="true">
+    <variable name="1" expression="" defaultValue="" alwaysStopAt="true" />
+    <context>
+      <option name="JAVA_DECLARATION" value="true" />
+    </context>
+  </template>
+  <template name="bef" value="@org.junit.Before&#10;public void $1$() {&#10;    $END$&#10;}" description="JUnit Before" toReformat="true" toShortenFQNames="true" useStaticImport="true">
+    <variable name="1" expression="" defaultValue="" alwaysStopAt="true" />
+    <context>
+      <option name="JAVA_DECLARATION" value="true" />
+    </context>
+  </template>
+  <template name="aft" value="@org.junit.After&#10;public void $1$() {&#10;    $END$&#10;}" description="JUnit After" toReformat="true" toShortenFQNames="true" useStaticImport="true">
+    <variable name="1" expression="" defaultValue="" alwaysStopAt="true" />
+    <context>
+      <option name="JAVA_DECLARATION" value="true" />
+    </context>
+  </template>
+  <template name="befc" value="@org.junit.BeforeClass&#10;public static void $1$() {&#10;    $END$&#10;}" description="JUnit BeforeClass" toReformat="true" toShortenFQNames="true" useStaticImport="true">
+    <variable name="1" expression="" defaultValue="" alwaysStopAt="true" />
+    <context>
+      <option name="JAVA_DECLARATION" value="true" />
+    </context>
+  </template>
+  <template name="aftc" value="@org.junit.AfterClass&#10;public static void $1$() {&#10;    $END$&#10;}" description="JUnit AfterClass" toReformat="true" toShortenFQNames="true" useStaticImport="true">
+    <variable name="1" expression="" defaultValue="" alwaysStopAt="true" />
+    <context>
+      <option name="JAVA_DECLARATION" value="true" />
+    </context>
+  </template>
+</templateSet>

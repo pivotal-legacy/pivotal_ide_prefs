@@ -19,14 +19,20 @@ class Cli::Configuration::RepoConfiguration
   end
 
   def backup_prefs_repo_location
-    @backup_prefs_repo_location || File.join(@backups_location_base, @ide_name)
+    @backup_prefs_repo_location || case_sensitive_filename(@backups_location_base)
   end
 
   def pivotal_prefs_repo_location
-    @pivotal_prefs_repo_location || File.join(@pivotal_prefs_location_base, @ide_name)
+    @pivotal_prefs_repo_location || case_sensitive_filename(@pivotal_prefs_location_base)
   end
 
   def user_prefs_repo_location
     @user_prefs_repo_location
+  end
+
+  private
+
+  def case_sensitive_filename(location_base)
+    Dir[File.join(location_base, @ide_name)].first
   end
 end

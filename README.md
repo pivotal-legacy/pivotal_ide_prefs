@@ -27,7 +27,7 @@ Then, run the following commands:
 ```sh
 git clone https://github.com/pivotal/pivotal_ide_prefs
 cd pivotal_ide_prefs/cli
-bin/ide_prefs --ide=[rubymine,intellij,intellijcommunity,webstorm] install
+bin/ide_prefs --ide=[rubymine,intellij,intellijcommunity,webstorm,androidstudio] install
 ```
 
 This will install the preferences into your IDE of choice. 
@@ -46,7 +46,7 @@ Then open a terminal and run the following commands:
 
 ```sh
 cd /path/to/your/pivotal_ide_prefs/cli
-bin/ide_prefs --ide=[rubymine,intellij,intellijcommunity] uninstall
+bin/ide_prefs --ide=[rubymine,intellij,intellijcommunity,androidstudio] uninstall
 ```
 
 ## Contributing New Preferences

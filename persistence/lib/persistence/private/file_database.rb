@@ -84,12 +84,14 @@ module Persistence
 
       def convert_absolute_paths_to_relative_paths(absolute_paths)
         absolute_paths.map do |file_path|
-          file_path.sub(case_insensitive_path_regex, "")
+          chop_off_file_database_root(file_path)
         end
       end
 
-      def case_insensitive_path_regex
-        Regexp.new(absolute_path_in_database(separator), Regexp::IGNORECASE)
+      def chop_off_file_database_root(file_path)
+        file_database_root = absolute_path_in_database(separator)
+        file_database_root_regex = Regexp.new(file_database_root, Regexp::IGNORECASE)
+        file_path.sub(file_database_root_regex, "")
       end
 
       def separator

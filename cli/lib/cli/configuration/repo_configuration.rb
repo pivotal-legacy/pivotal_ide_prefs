@@ -33,6 +33,7 @@ class Cli::Configuration::RepoConfiguration
   private
 
   def case_sensitive_filename(location_base)
-    Dir[File.join(location_base, @ide_name)].first
+    pref_dir_path = File.join(location_base, @ide_name)
+    Dir[pref_dir_path].first || pref_dir_path
   end
 end

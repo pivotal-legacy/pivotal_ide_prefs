@@ -30,7 +30,7 @@ module Cli
       end
 
       def version_number_of_directory(dir)
-        dir.gsub(/[a-zA-Z]/, "").to_i
+        dir.split('/').last.gsub(/[a-zA-Z]/, "").to_i
       end
     end
   end

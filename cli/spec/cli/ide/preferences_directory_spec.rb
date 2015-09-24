@@ -4,8 +4,8 @@ module Cli::Ide
   describe PreferencesDirectory do
     context "several directories match" do
       it "chooses the one with the largest number on the end" do
-        dir_with_biggest_number = "dir10"
-        dir_with_smallest_number = "dir9"
+        dir_with_biggest_number = "who/is/parker/dir10"
+        dir_with_smallest_number = "real/directories/have/slashes/dir9"
 
         dir = PreferencesDirectory.new(
           directories: [dir_with_biggest_number, dir_with_smallest_number],

@@ -5,10 +5,6 @@
   <action id="CloseAllEditorsButActive">
     <keyboard-shortcut first-keystroke="shift meta w" />
   </action>
-  <action id="EditorMatchBrace">
-    <keyboard-shortcut first-keystroke="ctrl meta alt open_bracket" />
-    <keyboard-shortcut first-keystroke="ctrl meta alt close_bracket" />
-  </action>
   <action id="Macro.run whole test file">
     <keyboard-shortcut first-keystroke="ctrl meta alt r" />
   </action>

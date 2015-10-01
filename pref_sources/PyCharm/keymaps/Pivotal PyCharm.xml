@@ -1,0 +1,22 @@
+<keymap version="1" name="Pivotal PyCharm" parent="Pivotal Common">
+  <action id="CloseOtherEditors">
+    <keyboard-shortcut first-keystroke="shift ctrl w" />
+  </action>
+  <action id="NextSplitter">
+    <keyboard-shortcut first-keystroke="alt tab" />
+    <keyboard-shortcut first-keystroke="ctrl back_quote" />
+  </action>
+  <action id="PrevSplitter">
+    <keyboard-shortcut first-keystroke="shift alt tab" />
+    <keyboard-shortcut first-keystroke="shift ctrl back_quote" />
+  </action>
+  <action id="QuickChangeScheme" />
+  <action id="SplitHorizontally">
+    <keyboard-shortcut first-keystroke="shift ctrl meta alt down" />
+    <keyboard-shortcut first-keystroke="meta back_slash" />
+  </action>
+  <action id="SplitVertically">
+    <keyboard-shortcut first-keystroke="shift ctrl meta alt up" />
+    <keyboard-shortcut first-keystroke="shift meta back_slash" />
+  </action>
+</keymap>

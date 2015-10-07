@@ -1,0 +1,277 @@
+<templateSet group="Cedar">
+  <template name="ccont" value="context(@&quot;$subject_under_test$&quot;, ^{&#10;    $content$&#10;});" description="Cedar context block" toReformat="true" toShortenFQNames="true">
+    <variable name="subject_under_test" expression="" defaultValue="" alwaysStopAt="true" />
+    <variable name="content" expression="" defaultValue="" alwaysStopAt="true" />
+    <context>
+      <option name="HTML_TEXT" value="false" />
+      <option name="HTML" value="false" />
+      <option name="XSL_TEXT" value="false" />
+      <option name="XML" value="false" />
+      <option name="objc" value="false" />
+      <option name="OC_DECLARATION" value="false" />
+      <option name="OC_STATEMENT" value="true" />
+      <option name="OC_EXPRESSION" value="false" />
+      <option name="CSS_PROPERTY_VALUE" value="false" />
+      <option name="CSS_DECLARATION_BLOCK" value="false" />
+      <option name="CSS_RULESET_LIST" value="false" />
+      <option name="CSS" value="false" />
+      <option name="JAVA_SCRIPT" value="false" />
+      <option name="OTHER" value="false" />
+    </context>
+  </template>
+  <template name="cit" value="it(@&quot;$expected_behavior$&quot;, ^{&#10;    $content$&#10;});" description="Cedar example block" toReformat="true" toShortenFQNames="true">
+    <variable name="expected_behavior" expression="" defaultValue="" alwaysStopAt="true" />
+    <variable name="content" expression="" defaultValue="" alwaysStopAt="true" />
+    <context>
+      <option name="HTML_TEXT" value="false" />
+      <option name="HTML" value="false" />
+      <option name="XSL_TEXT" value="false" />
+      <option name="XML" value="false" />
+      <option name="objc" value="false" />
+      <option name="OC_DECLARATION" value="false" />
+      <option name="OC_STATEMENT" value="true" />
+      <option name="OC_EXPRESSION" value="false" />
+      <option name="CSS_PROPERTY_VALUE" value="false" />
+      <option name="CSS_DECLARATION_BLOCK" value="false" />
+      <option name="CSS_RULESET_LIST" value="false" />
+      <option name="CSS" value="false" />
+      <option name="JAVA_SCRIPT" value="false" />
+      <option name="OTHER" value="false" />
+    </context>
+  </template>
+  <template name="cbef" value="beforeEach(^{&#10;    $content$&#10;});" description="Cedar before each block" toReformat="true" toShortenFQNames="true">
+    <variable name="content" expression="" defaultValue="" alwaysStopAt="true" />
+    <context>
+      <option name="HTML_TEXT" value="false" />
+      <option name="HTML" value="false" />
+      <option name="XSL_TEXT" value="false" />
+      <option name="XML" value="false" />
+      <option name="objc" value="false" />
+      <option name="OC_DECLARATION" value="false" />
+      <option name="OC_STATEMENT" value="true" />
+      <option name="OC_EXPRESSION" value="false" />
+      <option name="CSS_PROPERTY_VALUE" value="false" />
+      <option name="CSS_DECLARATION_BLOCK" value="false" />
+      <option name="CSS_RULESET_LIST" value="false" />
+      <option name="CSS" value="false" />
+      <option name="JAVA_SCRIPT" value="false" />
+      <option name="OTHER" value="false" />
+    </context>
+  </template>
+  <template name="caft" value="afterEach(^{&#10;    $content$&#10;});" description="Cedar after each block" toReformat="true" toShortenFQNames="true">
+    <variable name="content" expression="" defaultValue="" alwaysStopAt="true" />
+    <context>
+      <option name="HTML_TEXT" value="false" />
+      <option name="HTML" value="false" />
+      <option name="XSL_TEXT" value="false" />
+      <option name="XML" value="false" />
+      <option name="objc" value="false" />
+      <option name="OC_DECLARATION" value="false" />
+      <option name="OC_STATEMENT" value="true" />
+      <option name="OC_EXPRESSION" value="false" />
+      <option name="CSS_PROPERTY_VALUE" value="false" />
+      <option name="CSS_DECLARATION_BLOCK" value="false" />
+      <option name="CSS_RULESET_LIST" value="false" />
+      <option name="CSS" value="false" />
+      <option name="JAVA_SCRIPT" value="false" />
+      <option name="OTHER" value="false" />
+    </context>
+  </template>
+  <template name="cdesc" value="describe(@&quot;$subject_under_test$&quot;, ^{&#10;    $content$&#10;});" description="Cedar describe block" toReformat="true" toShortenFQNames="true">
+    <variable name="subject_under_test" expression="" defaultValue="" alwaysStopAt="true" />
+    <variable name="content" expression="" defaultValue="" alwaysStopAt="true" />
+    <context>
+      <option name="HTML_TEXT" value="false" />
+      <option name="HTML" value="false" />
+      <option name="XSL_TEXT" value="false" />
+      <option name="XML" value="false" />
+      <option name="objc" value="false" />
+      <option name="OC_DECLARATION" value="false" />
+      <option name="OC_STATEMENT" value="true" />
+      <option name="OC_EXPRESSION" value="false" />
+      <option name="CSS_PROPERTY_VALUE" value="false" />
+      <option name="CSS_DECLARATION_BLOCK" value="false" />
+      <option name="CSS_RULESET_LIST" value="false" />
+      <option name="CSS" value="false" />
+      <option name="JAVA_SCRIPT" value="false" />
+      <option name="OTHER" value="false" />
+    </context>
+  </template>
+  <template name="cshare" value="sharedExamplesFor(@&quot;$shared_behavior_description$&quot;, ^(NSDictionary *sharedContext) {&#10;    $content$&#10;});" description="Cedar shared example group" toReformat="true" toShortenFQNames="true">
+    <variable name="shared_behavior_description" expression="" defaultValue="" alwaysStopAt="true" />
+    <variable name="content" expression="" defaultValue="" alwaysStopAt="true" />
+    <context>
+      <option name="HTML_TEXT" value="false" />
+      <option name="HTML" value="false" />
+      <option name="XSL_TEXT" value="false" />
+      <option name="XML" value="false" />
+      <option name="objc" value="false" />
+      <option name="OC_DECLARATION" value="false" />
+      <option name="OC_STATEMENT" value="true" />
+      <option name="OC_EXPRESSION" value="false" />
+      <option name="CSS_PROPERTY_VALUE" value="false" />
+      <option name="CSS_DECLARATION_BLOCK" value="false" />
+      <option name="CSS_RULESET_LIST" value="false" />
+      <option name="CSS" value="false" />
+      <option name="JAVA_SCRIPT" value="false" />
+      <option name="OTHER" value="false" />
+    </context>
+  </template>
+  <template name="cpend" value="it(@&quot;$expected_behavior$&quot;, PENDING);" description="Cedar pending example block" toReformat="true" toShortenFQNames="true">
+    <variable name="expected_behavior" expression="" defaultValue="" alwaysStopAt="true" />
+    <context>
+      <option name="HTML_TEXT" value="false" />
+      <option name="HTML" value="false" />
+      <option name="XSL_TEXT" value="false" />
+      <option name="XML" value="false" />
+      <option name="objc" value="false" />
+      <option name="OC_DECLARATION" value="false" />
+      <option name="OC_STATEMENT" value="true" />
+      <option name="OC_EXPRESSION" value="false" />
+      <option name="CSS_PROPERTY_VALUE" value="false" />
+      <option name="CSS_DECLARATION_BLOCK" value="false" />
+      <option name="CSS_RULESET_LIST" value="false" />
+      <option name="CSS" value="false" />
+      <option name="JAVA_SCRIPT" value="false" />
+      <option name="OTHER" value="false" />
+    </context>
+  </template>
+  <template name="PENDING" value="^{&#10;    $content$&#10;}" description="Expand Cedar PENDING block to implement it" toReformat="true" toShortenFQNames="true">
+    <variable name="content" expression="" defaultValue="" alwaysStopAt="true" />
+    <context>
+      <option name="HTML_TEXT" value="false" />
+      <option name="HTML" value="false" />
+      <option name="XSL_TEXT" value="false" />
+      <option name="XML" value="false" />
+      <option name="objc" value="false" />
+      <option name="OC_DECLARATION" value="false" />
+      <option name="OC_STATEMENT" value="true" />
+      <option name="OC_EXPRESSION" value="true" />
+      <option name="CSS_PROPERTY_VALUE" value="false" />
+      <option name="CSS_DECLARATION_BLOCK" value="false" />
+      <option name="CSS_RULESET_LIST" value="false" />
+      <option name="CSS" value="false" />
+      <option name="JAVA_SCRIPT" value="false" />
+      <option name="OTHER" value="false" />
+    </context>
+  </template>
+  <template name="cbl" value="itShouldBehaveLike(@&quot;$shared_behavior_description$&quot;);" description="Cedar should behave like" toReformat="true" toShortenFQNames="true">
+    <variable name="shared_behavior_description" expression="" defaultValue="" alwaysStopAt="true" />
+    <context>
+      <option name="HTML_TEXT" value="false" />
+      <option name="HTML" value="false" />
+      <option name="XSL_TEXT" value="false" />
+      <option name="XML" value="false" />
+      <option name="objc" value="false" />
+      <option name="OC_DECLARATION" value="false" />
+      <option name="OC_STATEMENT" value="true" />
+      <option name="OC_EXPRESSION" value="false" />
+      <option name="CSS_PROPERTY_VALUE" value="false" />
+      <option name="CSS_DECLARATION_BLOCK" value="false" />
+      <option name="CSS_RULESET_LIST" value="false" />
+      <option name="CSS" value="false" />
+      <option name="JAVA_SCRIPT" value="false" />
+      <option name="OTHER" value="false" />
+    </context>
+  </template>
+  <template name="cblcont" value="itShouldBehaveLike(@&quot;$shared_behavior_description$&quot;, ^(NSMutableDictionary *context) {&#10;    context[@&quot;$context_key$&quot;] = $context_value$;&#10;});" description="Cedar should behave like with context" toReformat="true" toShortenFQNames="true">
+    <variable name="shared_behavior_description" expression="" defaultValue="" alwaysStopAt="true" />
+    <variable name="context_key" expression="" defaultValue="" alwaysStopAt="true" />
+    <variable name="context_value" expression="" defaultValue="" alwaysStopAt="true" />
+    <context>
+      <option name="HTML_TEXT" value="false" />
+      <option name="HTML" value="false" />
+      <option name="XSL_TEXT" value="false" />
+      <option name="XML" value="false" />
+      <option name="objc" value="false" />
+      <option name="OC_DECLARATION" value="false" />
+      <option name="OC_STATEMENT" value="true" />
+      <option name="OC_EXPRESSION" value="false" />
+      <option name="CSS_PROPERTY_VALUE" value="false" />
+      <option name="CSS_DECLARATION_BLOCK" value="false" />
+      <option name="CSS_RULESET_LIST" value="false" />
+      <option name="CSS" value="false" />
+      <option name="JAVA_SCRIPT" value="false" />
+      <option name="OTHER" value="false" />
+    </context>
+  </template>
+  <template name="csubj" value="subjectAction(^{ $action$ });" description="Cedar subject action block" toReformat="true" toShortenFQNames="true">
+    <variable name="action" expression="" defaultValue="" alwaysStopAt="true" />
+    <context>
+      <option name="HTML_TEXT" value="false" />
+      <option name="HTML" value="false" />
+      <option name="XSL_TEXT" value="false" />
+      <option name="XML" value="false" />
+      <option name="objc" value="false" />
+      <option name="OC_DECLARATION" value="false" />
+      <option name="OC_STATEMENT" value="true" />
+      <option name="OC_EXPRESSION" value="false" />
+      <option name="CSS_PROPERTY_VALUE" value="false" />
+      <option name="CSS_DECLARATION_BLOCK" value="false" />
+      <option name="CSS_RULESET_LIST" value="false" />
+      <option name="CSS" value="false" />
+      <option name="JAVA_SCRIPT" value="false" />
+      <option name="OTHER" value="false" />
+    </context>
+  </template>
+  <template name="clogv" value="NSLog(@&quot;================&gt; $object_of_interest_COPY$: $format$&quot;, $object_of_interest$);$END$" description="Cedar console log variable" toReformat="true" toShortenFQNames="true">
+    <variable name="object_of_interest" expression="variableOfType(&quot;&quot;)" defaultValue="" alwaysStopAt="true" />
+    <variable name="object_of_interest_COPY" expression="object_of_interest" defaultValue="x" alwaysStopAt="false" />
+    <variable name="format" expression="expressionFormatCode(object_of_interest)" defaultValue="" alwaysStopAt="false" />
+    <context>
+      <option name="HTML_TEXT" value="false" />
+      <option name="HTML" value="false" />
+      <option name="XSL_TEXT" value="false" />
+      <option name="XML" value="false" />
+      <option name="objc" value="false" />
+      <option name="OC_DECLARATION" value="false" />
+      <option name="OC_STATEMENT" value="true" />
+      <option name="OC_EXPRESSION" value="false" />
+      <option name="CSS_PROPERTY_VALUE" value="false" />
+      <option name="CSS_DECLARATION_BLOCK" value="false" />
+      <option name="CSS_RULESET_LIST" value="false" />
+      <option name="CSS" value="false" />
+      <option name="JAVA_SCRIPT" value="false" />
+      <option name="OTHER" value="false" />
+    </context>
+  </template>
+  <template name="clog" value="NSLog(@&quot;================&gt; $format$&quot;, $object_of_interest$);$END$" description="Cedar console log" toReformat="true" toShortenFQNames="true">
+    <variable name="object_of_interest" expression="variableOfType(&quot;&quot;)" defaultValue="" alwaysStopAt="true" />
+    <variable name="format" expression="expressionFormatCode(object_of_interest)" defaultValue="" alwaysStopAt="false" />
+    <context>
+      <option name="HTML_TEXT" value="false" />
+      <option name="HTML" value="false" />
+      <option name="XSL_TEXT" value="false" />
+      <option name="XML" value="false" />
+      <option name="objc" value="false" />
+      <option name="OC_DECLARATION" value="false" />
+      <option name="OC_STATEMENT" value="true" />
+      <option name="OC_EXPRESSION" value="false" />
+      <option name="CSS_PROPERTY_VALUE" value="false" />
+      <option name="CSS_DECLARATION_BLOCK" value="false" />
+      <option name="CSS_RULESET_LIST" value="false" />
+      <option name="CSS" value="false" />
+      <option name="JAVA_SCRIPT" value="false" />
+      <option name="OTHER" value="false" />
+    </context>
+  </template>
+  <template name="cxit" value="xit(@&quot;$expected_behavior$&quot;, ^{ });" description="Pending Cedar example block" toReformat="false" toShortenFQNames="true">
+    <variable name="expected_behavior" expression="" defaultValue="" alwaysStopAt="true" />
+    <context>
+      <option name="HTML_TEXT" value="false" />
+      <option name="HTML" value="false" />
+      <option name="XSL_TEXT" value="false" />
+      <option name="XML" value="false" />
+      <option name="objc" value="false" />
+      <option name="OC_DECLARATION" value="false" />
+      <option name="OC_STATEMENT" value="true" />
+      <option name="OC_EXPRESSION" value="false" />
+      <option name="CSS_PROPERTY_VALUE" value="false" />
+      <option name="CSS_DECLARATION_BLOCK" value="false" />
+      <option name="CSS_RULESET_LIST" value="false" />
+      <option name="CSS" value="false" />
+      <option name="JAVA_SCRIPT" value="false" />
+      <option name="OTHER" value="false" />
+    </context>
+  </template>
+</templateSet>

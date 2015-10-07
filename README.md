@@ -46,7 +46,7 @@ Then open a terminal and run the following commands:
 
 ```sh
 cd /path/to/your/pivotal_ide_prefs/cli
-bin/ide_prefs --ide=[rubymine,intellij,intellijcommunity,androidstudio,pycharm] uninstall
+bin/ide_prefs --ide=[rubymine,intellij,intellijcommunity,androidstudio,appcode,pycharm] uninstall
 ```
 
 ## Contributing New Preferences

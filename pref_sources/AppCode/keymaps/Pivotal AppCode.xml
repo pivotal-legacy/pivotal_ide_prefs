@@ -1,8 +1,8 @@
 <keymap version="1" name="Pivotal AppCode" parent="Pivotal Common">
   <action id="ChooseRunConfiguration">
-    <keyboard-shortcut first-keystroke="meta alt R" />
+    <keyboard-shortcut first-keystroke="meta alt r" />
   </action>
   <action id="Run">
-    <keyboard-shortcut first-keystroke="meta R" />
+    <keyboard-shortcut first-keystroke="meta r" />
   </action>
 </keymap>

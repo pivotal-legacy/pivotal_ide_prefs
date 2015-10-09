@@ -1,4 +1,4 @@
-<keymap version="1" name="Pivotal AppCode" parent="Xcode">
+<keymap version="1" name="Pivotal AppCode Xcode akitchen" parent="Xcode">
   <!-- Pivotal Common -->
   <action id="CloseAllEditors">
     <keyboard-shortcut first-keystroke="meta alt W" />

@@ -21,8 +21,8 @@ logging_options = {log_level: :info}
 OptionParser.new do |opts|
   opts.on(
       "--ide=IDE",
-      ["webstorm", "intellij", "intellijcommunity", "rubymine", "androidstudio", "pycharm"],
-      "webstorm, intellij, intellijcommunity, rubymine, androidstudio", "pycharm"
+      ["webstorm", "intellij", "intellijcommunity", "rubymine", "appcode", "androidstudio", "pycharm"],
+      "webstorm, intellij, intellijcommunity, rubymine, appcode, androidstudio", "pycharm"
   ) do |ide|
     repo_config_options[:user_prefs_repo_location] = Module.const_get("Cli::Ide::#{ide.capitalize}UserPrefDir").new.path
     repo_config_options[:ide_name] = ide
@@ -49,6 +49,9 @@ end
 Cli::Logger.new(log_level: logging_options[:log_level]).start
 
 repo_configuration = Cli::Configuration::RepoConfiguration.new(repo_config_options)
+
+puts "This will install preferences at #{repo_configuration.user_prefs_repo_location}"
+puts "And store backups at #{repo_configuration.backup_prefs_repo_location}"
 
 repos = {
   user_prefs_repo:    Persistence::Repos::UserPrefsRepo.new(location: repo_configuration.user_prefs_repo_location),

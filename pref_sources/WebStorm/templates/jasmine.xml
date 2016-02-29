@@ -1,0 +1,153 @@
+<templateSet group="jasmine">
+  <template name="jdesc" value="// DEPRECATED: you can now use 'desc&lt;TAB&gt;'&#10;describe(&quot;$A$&quot;, function () {&#10;  it(&quot;should $B$&quot;, function() {&#10;    $END$&#10;  });&#10;});" description="Jasmine describe block, with one it" toReformat="true" toShortenFQNames="true">
+    <variable name="A" expression="" defaultValue="" alwaysStopAt="true" />
+    <variable name="B" expression="" defaultValue="" alwaysStopAt="true" />
+    <context>
+      <option name="HTML" value="false" />
+      <option name="XML" value="false" />
+      <option name="CSS" value="false" />
+      <option name="CUCUMBER_FEATURE_FILE" value="false" />
+      <option name="JAVA_SCRIPT" value="true" />
+      <option name="RUBY" value="false" />
+      <option name="RHTML" value="false" />
+      <option name="OTHER" value="false" />
+    </context>
+  </template>
+  <template name="jit" value="// DEPRECATED: you can now use 'it&lt;TAB&gt;'&#10;it(&quot;should $B$&quot;, function() {&#10;  $END$&#10;});&#10;" description="Jasmine it block" toReformat="true" toShortenFQNames="true">
+    <variable name="B" expression="" defaultValue="" alwaysStopAt="true" />
+    <context>
+      <option name="HTML" value="false" />
+      <option name="XML" value="false" />
+      <option name="CSS" value="false" />
+      <option name="CUCUMBER_FEATURE_FILE" value="false" />
+      <option name="JAVA_SCRIPT" value="true" />
+      <option name="RUBY" value="false" />
+      <option name="RHTML" value="false" />
+      <option name="OTHER" value="false" />
+    </context>
+  </template>
+  <template name="jwait" value="// DEPRECATED: you can now use 'wait&lt;TAB&gt;'&#10;waitsFor(1000, function() {&#10;  $END$&#10;}, &quot;$A$&quot;);&#10;&#10;" description="Jasmine waits block" toReformat="true" toShortenFQNames="true">
+    <variable name="A" expression="" defaultValue="" alwaysStopAt="true" />
+    <context>
+      <option name="HTML" value="false" />
+      <option name="XML" value="false" />
+      <option name="CSS" value="false" />
+      <option name="CUCUMBER_FEATURE_FILE" value="false" />
+      <option name="JAVA_SCRIPT" value="true" />
+      <option name="RUBY" value="false" />
+      <option name="RHTML" value="false" />
+      <option name="OTHER" value="false" />
+    </context>
+  </template>
+  <template name="jrun" value="// DEPRECATED: you can now use 'run&lt;TAB&gt;'&#10;runs(function() {&#10;  $END$&#10;});" description="Jasmine runs block" toReformat="true" toShortenFQNames="true">
+    <context>
+      <option name="HTML" value="false" />
+      <option name="XML" value="false" />
+      <option name="CSS" value="false" />
+      <option name="CUCUMBER_FEATURE_FILE" value="false" />
+      <option name="JAVA_SCRIPT" value="true" />
+      <option name="RUBY" value="false" />
+      <option name="RHTML" value="false" />
+      <option name="OTHER" value="false" />
+    </context>
+  </template>
+  <template name="jbef" value="// DEPRECATED: you can now use 'bef&lt;TAB&gt;'&#10;beforeEach(function() {&#10;  $END$&#10;});" description="a Jasmine beforeEach block" toReformat="true" toShortenFQNames="true">
+    <context>
+      <option name="HTML" value="false" />
+      <option name="XML" value="false" />
+      <option name="CSS" value="false" />
+      <option name="CUCUMBER_FEATURE_FILE" value="false" />
+      <option name="JAVA_SCRIPT" value="true" />
+      <option name="RUBY" value="false" />
+      <option name="RHTML" value="false" />
+      <option name="OTHER" value="false" />
+    </context>
+  </template>
+  <template name="jaft" value="// DEPRECATED: you can now use 'aft&lt;TAB&gt;'&#10;afterEach(function() {&#10;  $END$&#10;});" description="a Jasmine afterEach block" toReformat="true" toShortenFQNames="true">
+    <context>
+      <option name="HTML" value="false" />
+      <option name="XML" value="false" />
+      <option name="CSS" value="false" />
+      <option name="CUCUMBER_FEATURE_FILE" value="false" />
+      <option name="JAVA_SCRIPT" value="true" />
+      <option name="RUBY" value="false" />
+      <option name="RHTML" value="false" />
+      <option name="OTHER" value="false" />
+    </context>
+  </template>
+  <template name="aft" value="afterEach(function() {&#10;  $END$&#10;});" description="a Jasmine afterEach block" toReformat="true" toShortenFQNames="true">
+    <context>
+      <option name="HTML" value="false" />
+      <option name="XML" value="false" />
+      <option name="CSS" value="false" />
+      <option name="CUCUMBER_FEATURE_FILE" value="false" />
+      <option name="JAVA_SCRIPT" value="true" />
+      <option name="RUBY" value="false" />
+      <option name="RHTML" value="false" />
+      <option name="OTHER" value="false" />
+    </context>
+  </template>
+  <template name="bef" value="beforeEach(function() {&#10;  $END$&#10;});" description="a Jasmine beforeEach block" toReformat="true" toShortenFQNames="true">
+    <context>
+      <option name="HTML" value="false" />
+      <option name="XML" value="false" />
+      <option name="CSS" value="false" />
+      <option name="CUCUMBER_FEATURE_FILE" value="false" />
+      <option name="JAVA_SCRIPT" value="true" />
+      <option name="RUBY" value="false" />
+      <option name="RHTML" value="false" />
+      <option name="OTHER" value="false" />
+    </context>
+  </template>
+  <template name="desc" value="describe(&quot;$A$&quot;, function () {&#10;  $END$&#10;});" description="Jasmine describe block, with one it" toReformat="true" toShortenFQNames="true">
+    <variable name="A" expression="" defaultValue="" alwaysStopAt="true" />
+    <context>
+      <option name="HTML" value="false" />
+      <option name="XML" value="false" />
+      <option name="CSS" value="false" />
+      <option name="CUCUMBER_FEATURE_FILE" value="false" />
+      <option name="JAVA_SCRIPT" value="true" />
+      <option name="RUBY" value="false" />
+      <option name="RHTML" value="false" />
+      <option name="OTHER" value="false" />
+    </context>
+  </template>
+  <template name="it" value="it(&quot;should $B$&quot;, function() {&#10;  $END$&#10;});&#10;" description="Jasmine it block" toReformat="true" toShortenFQNames="true">
+    <variable name="B" expression="" defaultValue="" alwaysStopAt="true" />
+    <context>
+      <option name="HTML" value="false" />
+      <option name="XML" value="false" />
+      <option name="CSS" value="false" />
+      <option name="CUCUMBER_FEATURE_FILE" value="false" />
+      <option name="JAVA_SCRIPT" value="true" />
+      <option name="RUBY" value="false" />
+      <option name="RHTML" value="false" />
+      <option name="OTHER" value="false" />
+    </context>
+  </template>
+  <template name="run" value="runs(function() {&#10;  $END$&#10;});" description="Jasmine runs block" toReformat="true" toShortenFQNames="true">
+    <context>
+      <option name="HTML" value="false" />
+      <option name="XML" value="false" />
+      <option name="CSS" value="false" />
+      <option name="CUCUMBER_FEATURE_FILE" value="false" />
+      <option name="JAVA_SCRIPT" value="true" />
+      <option name="RUBY" value="false" />
+      <option name="RHTML" value="false" />
+      <option name="OTHER" value="false" />
+    </context>
+  </template>
+  <template name="wait" value="waitsFor(1000, function() {&#10;  $END$&#10;}, &quot;$A$&quot;);&#10;&#10;" description="Jasmine waits block" toReformat="true" toShortenFQNames="true">
+    <variable name="A" expression="" defaultValue="" alwaysStopAt="true" />
+    <context>
+      <option name="HTML" value="false" />
+      <option name="XML" value="false" />
+      <option name="CSS" value="false" />
+      <option name="CUCUMBER_FEATURE_FILE" value="false" />
+      <option name="JAVA_SCRIPT" value="true" />
+      <option name="RUBY" value="false" />
+      <option name="RHTML" value="false" />
+      <option name="OTHER" value="false" />
+    </context>
+  </template>
+</templateSet>

@@ -1,0 +1,23 @@
+<templateSet group="JavaScript">
+  <template name="clogv" value="console.error(&quot;=============&gt; $VAR_STRING$: &quot;, $VAR$);$END$" description="debug log a variable" toReformat="true" toShortenFQNames="true">
+    <variable name="VAR" expression="jsSuggestVariableName()" defaultValue="" alwaysStopAt="true" />
+    <variable name="VAR_STRING" expression="escapeString(VAR)" defaultValue="" alwaysStopAt="false" />
+    <context>
+      <option name="JAVA_SCRIPT" value="true" />
+    </context>
+  </template>
+  <template name="tlog" value="console.error(&quot;=============&gt; $c$.$m$ @$l$&quot;);&#10;$END$" description="" toReformat="true" toShortenFQNames="true">
+    <variable name="c" expression="jsClassName()" defaultValue="" alwaysStopAt="false" />
+    <variable name="m" expression="jsMethodName()" defaultValue="" alwaysStopAt="false" />
+    <variable name="l" expression="lineNumber()" defaultValue="" alwaysStopAt="false" />
+    <context>
+      <option name="JAVA_SCRIPT" value="true" />
+    </context>
+  </template>
+  <template name="clog" value="console.error(&quot;=============&gt;&quot;, $A$);$END$" description="Conspicious console.error message" toReformat="true" toShortenFQNames="true">
+    <variable name="A" expression="" defaultValue="" alwaysStopAt="true" />
+    <context>
+      <option name="JAVA_SCRIPT" value="true" />
+    </context>
+  </template>
+</templateSet>

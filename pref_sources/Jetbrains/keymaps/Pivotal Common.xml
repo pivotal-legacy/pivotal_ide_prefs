@@ -1,50 +1,49 @@
-<?xml version="1.0" encoding="UTF-8"?>
 <keymap version="1" name="Pivotal Common" parent="Mac OS X 10.5+">
   <action id="CloseAllEditors">
-    <keyboard-shortcut first-keystroke="meta alt W" />
+    <keyboard-shortcut first-keystroke="meta alt w" />
   </action>
   <action id="CloseAllEditorsButActive">
-    <keyboard-shortcut first-keystroke="shift meta W" />
+    <keyboard-shortcut first-keystroke="shift meta w" />
   </action>
   <action id="EditorMatchBrace">
-    <keyboard-shortcut first-keystroke="control meta alt OPEN_BRACKET" />
-    <keyboard-shortcut first-keystroke="control meta alt CLOSE_BRACKET" />
+    <keyboard-shortcut first-keystroke="ctrl meta alt open_bracket" />
+    <keyboard-shortcut first-keystroke="ctrl meta alt close_bracket" />
   </action>
   <action id="Macro.run whole test file">
-    <keyboard-shortcut first-keystroke="control meta alt R" />
+    <keyboard-shortcut first-keystroke="ctrl meta alt r" />
   </action>
   <action id="MoveEditorToOppositeTabGroup">
-    <keyboard-shortcut first-keystroke="shift control meta alt LEFT" />
-    <keyboard-shortcut first-keystroke="shift control meta alt RIGHT" />
+    <keyboard-shortcut first-keystroke="shift ctrl meta alt left" />
+    <keyboard-shortcut first-keystroke="shift ctrl meta alt right" />
   </action>
   <action id="Resume">
-    <keyboard-shortcut first-keystroke="F9" />
+    <keyboard-shortcut first-keystroke="f9" />
   </action>
   <action id="SplitHorizontally">
-    <keyboard-shortcut first-keystroke="shift control meta alt DOWN" />
+    <keyboard-shortcut first-keystroke="shift ctrl meta alt down" />
   </action>
   <action id="SplitVertically">
-    <keyboard-shortcut first-keystroke="shift control meta alt UP" />
+    <keyboard-shortcut first-keystroke="shift ctrl meta alt up" />
   </action>
   <action id="SwitchApply">
-    <keyboard-shortcut first-keystroke="control alt ENTER" />
+    <keyboard-shortcut first-keystroke="ctrl alt enter" />
   </action>
   <action id="SwitchDown">
-    <keyboard-shortcut first-keystroke="control alt DOWN" />
+    <keyboard-shortcut first-keystroke="ctrl alt down" />
   </action>
   <action id="SwitchLeft">
-    <keyboard-shortcut first-keystroke="control alt LEFT" />
+    <keyboard-shortcut first-keystroke="ctrl alt left" />
   </action>
   <action id="SwitchRight">
-    <keyboard-shortcut first-keystroke="control alt RIGHT" />
+    <keyboard-shortcut first-keystroke="ctrl alt right" />
   </action>
   <action id="SwitchUp">
-    <keyboard-shortcut first-keystroke="control alt UP" />
+    <keyboard-shortcut first-keystroke="ctrl alt up" />
   </action>
   <action id="Vcs.ShowTabbedFileHistory">
-    <keyboard-shortcut first-keystroke="control meta alt H" />
+    <keyboard-shortcut first-keystroke="ctrl meta alt h" />
   </action>
   <action id="org.jetbrains.plugins.ruby.tasks.rake.actions.RakeTasksPopupAction">
-    <keyboard-shortcut first-keystroke="alt R" />
+    <keyboard-shortcut first-keystroke="alt r" />
   </action>
 </keymap>

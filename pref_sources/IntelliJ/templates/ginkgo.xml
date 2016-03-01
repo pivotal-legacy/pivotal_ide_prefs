@@ -1,43 +1,24 @@
-<?xml version="1.0" encoding="UTF-8"?>
 <templateSet group="ginkgo">
   <template name="Cont" value="Context(&quot;$1$&quot;, func() {&#10;  $END$&#10;})" description="Ginkgo Context" toReformat="true" toShortenFQNames="true">
     <variable name="1" expression="" defaultValue="" alwaysStopAt="true" />
-    <context>
-      <option name="GO" value="true" />
-      <option name="GO_FUNCTION" value="true" />
-    </context>
+    <context />
   </template>
   <template name="It" value="It(&quot;$1$&quot;, func() {&#10;  $END$&#10;})" description="Ginkgo it definition" toReformat="true" toShortenFQNames="true">
     <variable name="1" expression="" defaultValue="" alwaysStopAt="true" />
-    <context>
-      <option name="GO" value="true" />
-      <option name="GO_FUNCTION" value="true" />
-    </context>
+    <context />
   </template>
   <template name="Desc" value="Describe(&quot;$1$&quot;, func() {&#10;  $END$&#10;})" description="Ginkgo Describe" toReformat="true" toShortenFQNames="true">
     <variable name="1" expression="" defaultValue="" alwaysStopAt="true" />
-    <context>
-      <option name="GO" value="true" />
-      <option name="GO_FUNCTION" value="true" />
-    </context>
+    <context />
   </template>
   <template name="Bef" value="BeforeEach(func() {&#10;  $END$&#10;})" description="Ginkgo BeforeEach" toReformat="true" toShortenFQNames="true">
-    <context>
-      <option name="GO" value="true" />
-      <option name="GO_FUNCTION" value="true" />
-    </context>
+    <context />
   </template>
   <template name="Aft" value="AfterEach(func() {&#10;  $END$&#10;})" description="Ginkgo AfterEach" toReformat="true" toShortenFQNames="true">
-    <context>
-      <option name="GO" value="true" />
-      <option name="GO_FUNCTION" value="true" />
-    </context>
+    <context />
   </template>
   <template name="f" value="func($START$) {&#10;    $END$&#10;}" description="anonymous function" toReformat="true" toShortenFQNames="true">
     <variable name="START" expression="" defaultValue="" alwaysStopAt="true" />
-    <context>
-      <option name="GO" value="true" />
-      <option name="GO_FUNCTION" value="true" />
-    </context>
+    <context />
   </template>
 </templateSet>

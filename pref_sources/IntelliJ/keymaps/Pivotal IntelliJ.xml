@@ -1,7 +1,5 @@
-<?xml version="1.0" encoding="UTF-8"?>
 <keymap version="1" name="Pivotal IntelliJ" parent="Pivotal Common">
   <action id="org.jetbrains.plugins.ruby.tasks.rake.actions.RakeTasksPopupAction">
-    <keyboard-shortcut first-keystroke="alt R" />
+    <keyboard-shortcut first-keystroke="alt r" />
   </action>
 </keymap>
-

@@ -112,7 +112,7 @@
       <option name="OTHER" value="false" />
     </context>
   </template>
-  <template name="it" value="it(&quot;should $B$&quot;, function() {&#10;  $END$&#10;});&#10;" description="Jasmine it block" toReformat="true" toShortenFQNames="true">
+  <template name="it" value="it(&quot;$B$&quot;, function() {&#10;  $END$&#10;});&#10;" description="Jasmine it block" toReformat="true" toShortenFQNames="true">
     <variable name="B" expression="" defaultValue="" alwaysStopAt="true" />
     <context>
       <option name="HTML" value="false" />

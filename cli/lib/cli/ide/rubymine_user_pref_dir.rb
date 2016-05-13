@@ -8,7 +8,7 @@ module Cli
       end
 
       def default_ide_pref_dir_version
-        "80"
+        "2016.1"
       end
     end
   end

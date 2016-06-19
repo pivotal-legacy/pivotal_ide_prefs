@@ -19,6 +19,8 @@ repo_config_options = {}
 logging_options = {log_level: :info}
 
 OptionParser.new do |opts|
+  opts.banner = "Usage: ide_prefs [options] [install,uninstall]"
+
   opts.on(
       "--ide=IDE",
       ["webstorm", "intellij", "intellijcommunity", "rubymine", "appcode", "androidstudio", "pycharm"],

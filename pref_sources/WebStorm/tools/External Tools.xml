@@ -1,0 +1,9 @@
+<toolSet name="External Tools">
+  <tool name="spec_swap" description="swap from spec to src and back" showInMainMenu="true" showInEditor="true" showInProject="true" showInSearchPopup="true" disabled="false" useConsole="false" showConsoleOnStdOut="false" showConsoleOnStdErr="false" synchronizeAfterRun="true">
+    <exec>
+      <option name="COMMAND" value="$USER_HOME$/workspace/pivotal_ide_prefs/pref_sources/WebStorm/tools/open_spec_or_impl.sh" />
+      <option name="PARAMETERS" value="$FilePath$ $ProjectFileDir$" />
+      <option name="WORKING_DIRECTORY" value="$ProjectFileDir$" />
+    </exec>
+  </tool>
+</toolSet>

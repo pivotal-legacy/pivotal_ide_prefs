@@ -9,6 +9,11 @@
     <keyboard-shortcut first-keystroke="ctrl meta alt open_bracket" />
     <keyboard-shortcut first-keystroke="ctrl meta alt close_bracket" />
   </action>
+  <action id="Git.ResolveConflicts">
+    <keyboard-shortcut first-keystroke="shift ctrl m" />
+  </action>
+  <action id="GotoTest" />
+  <action id="Images.ShowThumbnails" />
   <action id="Macro.run whole test file">
     <keyboard-shortcut first-keystroke="ctrl meta alt r" />
   </action>
@@ -39,6 +44,9 @@
   </action>
   <action id="SwitchUp">
     <keyboard-shortcut first-keystroke="ctrl alt up" />
+  </action>
+  <action id="Tool_External Tools_spec_swap">
+    <keyboard-shortcut first-keystroke="shift meta t" />
   </action>
   <action id="Vcs.ShowTabbedFileHistory">
     <keyboard-shortcut first-keystroke="ctrl meta alt h" />

@@ -1,2 +1,17 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<keymap version="1" name="Mavenlink Synced" parent="Mac OS X 10.5+" siblings="Adam, Andrew, and Eric"/>
+<keymap version="1" name="Mavenlink Synced" parent="Mac OS X 10.5+">
+  <action id="Back">
+    <keyboard-shortcut first-keystroke="meta alt left" />
+    <mouse-shortcut keystroke="button4" />
+  </action>
+  <action id="EditorIndentLineOrSelection">
+    <keyboard-shortcut first-keystroke="meta close_bracket" />
+  </action>
+  <action id="EditorUnindentSelection">
+    <keyboard-shortcut first-keystroke="shift tab" />
+    <keyboard-shortcut first-keystroke="meta open_bracket" />
+  </action>
+  <action id="Forward">
+    <keyboard-shortcut first-keystroke="meta alt right" />
+    <mouse-shortcut keystroke="button5" />
+  </action>
+</keymap>

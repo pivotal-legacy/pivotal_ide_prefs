@@ -1,8 +1,6 @@
-# Pivotal IDE Prefs
+# Mavenlink IDE Prefs
 
-[![Code Climate](https://codeclimate.com/github/pivotal/pivotal_ide_prefs.png)](https://codeclimate.com/github/pivotal/pivotal_ide_prefs)
-
-This repo provides both a superset of the Mac OS X 10.5+ keybindings for JetBrains IDEs, as well as a team-centric workflow for tracking and syncing IDE customizations over time.
+This repo provides both a superset of the Mac OS X 10.5+ keybindings for JetBrains IDEs, as well as a team-centric workflow for tracking and syncing IDE customizations over time. It is forked from Pivotal IDE Prefs.
 
 ## Requires
 
@@ -18,6 +16,8 @@ Once upon a time, RubyMine shipped with keybindings that made no sense to anyone
 
 Today, this project is not only a repository of Pivotal's preferences for Jetbrains IDEs – it's also a recommended workflow for tracking your team's customizations to IDE preferences. 
 
+This is a forked copy with some small changes for internal use by Mavenlink employees.
+
 ## Installation ##
 
 First, *close your Jetbrains IDE*. 
@@ -25,8 +25,8 @@ First, *close your Jetbrains IDE*.
 Then, run the following commands:
 
 ```sh
-git clone https://github.com/pivotal/pivotal_ide_prefs
-cd pivotal_ide_prefs/cli
+git clone https://github.com/mavenlink/mavenlink_ide_prefs
+cd mavenlink_ide_prefs/cli
 bin/ide_prefs --ide=[rubymine,intellij,intellijcommunity,webstorm,androidstudio,pycharm] install
 ```
 
@@ -34,18 +34,18 @@ This will install the preferences into your IDE of choice.
 
 ## Tracking changes ##
 
-The installation process symlinks the pivotal preferences into your IDE's preferences folder. Thus, as you and 
+The installation process symlinks the Mavenlink Synced preferences into your IDE's preferences folder. Thus, as you and 
 your team change your preferences inside your IDE, your clone of the preferences will note the changes, and you can
-commit and push those changes to your own fork (or even submit pull requests back to the Pivotal repo for anything
+commit and push those changes to your own fork (or even submit pull requests back to the Mavenlink repo for anything
 you think is generally useful).
 
 ## Uninstall ##
 
-If you'd like to uninstall the pivotal preferences and restore your original settings, first, *close your IDE*. 
+If you'd like to uninstall the preferences and restore your original settings, first, *close your IDE*. 
 Then open a terminal and run the following commands:
 
 ```sh
-cd /path/to/your/pivotal_ide_prefs/cli
+cd /path/to/your/mavenlink_ide_prefs/cli
 bin/ide_prefs --ide=[rubymine,intellij,intellijcommunity,androidstudio,appcode,pycharm] uninstall
 ```
 
@@ -57,32 +57,3 @@ If you'd like to add preferences for another IDE, simply:
 0. Create a new <IdeName>UserPrefDir class inside cli/lib/cli/ide. This class must respond to a single method, `#path`, which tells the installer where to install the preferences to on the system.
 0. Modify `cli/bin/ide_prefs.rb` to include the IDE
 0. Update the README, indicating that another IDE has been added to the installer. 
-
-## Migrating from Pivotal-Preferences-RubyMine
-
-If your team is already maintaining their rubymine preferences via the now-deprecated Pivotal-Preferences-RubyMine, simply do the following to migrate:
-
-1. Close RubyMine.
-2. Uninstall the old prefs:
-
-        cd /path/to/your/Pivotal-Preferences-RubyMine
-        ./mineprefs uninstall
-
-3. Copy your old prefs into pivotal\_ide\_prefs. 
-
-        cd /path/to/your/pivotal_ide_prefs
-        cp -r /path/to/your/Pivotal-Preferences-RubyMine/RubyMineXX/* pref_sources/RubyMine/
-
-4. Re-install your preferences using `pivotal_ide_prefs` (see the Installation section above).
-
-## TODO
-
-* ~~Install command~~
-* ~~Uninstall command~~
-* ~~Make commands Idempodent~~
-* ~~Basic Logging~~
-* ~~Specify log levels at the command line~~
-* ~~IntelliJ prefs~~
-* Appcode prefs
-* ~~PyCharm prefs~~
-* ~~WebStorm prefs~~

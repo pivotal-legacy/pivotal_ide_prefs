@@ -1,16 +1,8 @@
-<?xml version="1.0" encoding="UTF-8"?>
 <templateSet group="webOS">
   <template name="assist" value="function $CLASS$() {&#10;  $END$&#10;}&#10;&#10;$CLASS$.prototype.setup = function() {&#10;};&#10;&#10;$CLASS$.prototype.activate = function() {&#10;};&#10;&#10;$CLASS$.prototype.deactivate = function() {&#10;};&#10;&#10;$CLASS$.prototype.cleanup = function() {&#10;};&#10;&#10;$CLASS$.prototype.onStageActivate = function() {&#10;};&#10;&#10;$CLASS$.prototype.onStageDeactivate = function() {&#10;};&#10;" description="block out a Palm webOS scene assistant" toReformat="true" toShortenFQNames="true">
     <variable name="CLASS" expression="" defaultValue="" alwaysStopAt="true" />
     <context>
-      <option name="HTML" value="false" />
-      <option name="XML" value="false" />
-      <option name="RUBY" value="false" />
-      <option name="RHTML" value="false" />
-      <option name="CSS" value="false" />
       <option name="JAVA_SCRIPT" value="true" />
-      <option name="CUCUMBER_FEATURE_FILE" value="false" />
-      <option name="OTHER" value="false" />
     </context>
   </template>
   <template name="proto" value="$CLASS$.prototype.$PROPERTY$ = function($ARGS$) {&#10;  $END$&#10;};&#10;" description="add a new function to a JavaScript object's prototype" toReformat="true" toShortenFQNames="true">
@@ -18,15 +10,7 @@
     <variable name="PROPERTY" expression="" defaultValue="" alwaysStopAt="true" />
     <variable name="ARGS" expression="" defaultValue="" alwaysStopAt="true" />
     <context>
-      <option name="HTML" value="false" />
-      <option name="XML" value="false" />
-      <option name="RUBY" value="false" />
-      <option name="RHTML" value="false" />
-      <option name="CSS" value="false" />
       <option name="JAVA_SCRIPT" value="true" />
-      <option name="CUCUMBER_FEATURE_FILE" value="false" />
-      <option name="OTHER" value="false" />
     </context>
   </template>
 </templateSet>
-

@@ -3,6 +3,7 @@
     <keyboard-shortcut first-keystroke="meta alt left" />
     <mouse-shortcut keystroke="button4" />
   </action>
+  <action id="EditBreakpoint" />
   <action id="EditorIndentLineOrSelection">
     <keyboard-shortcut first-keystroke="meta close_bracket" />
   </action>
@@ -14,4 +15,23 @@
     <keyboard-shortcut first-keystroke="meta alt right" />
     <mouse-shortcut keystroke="button5" />
   </action>
+  <action id="GotoRelated" />
+  <action id="MoveLineDown">
+    <keyboard-shortcut first-keystroke="shift alt down" />
+    <keyboard-shortcut first-keystroke="ctrl meta down" />
+  </action>
+  <action id="MoveLineUp">
+    <keyboard-shortcut first-keystroke="shift alt up" />
+    <keyboard-shortcut first-keystroke="ctrl meta up" />
+  </action>
+  <action id="Run">
+    <keyboard-shortcut first-keystroke="ctrl r" />
+    <keyboard-shortcut first-keystroke="meta f8" />
+  </action>
+  <action id="RunClass">
+    <keyboard-shortcut first-keystroke="shift ctrl r" />
+    <keyboard-shortcut first-keystroke="shift meta f8" />
+  </action>
+  <action id="ToggleLineBreakpoint" />
+  <action id="ViewBreakpoints" />
 </keymap>

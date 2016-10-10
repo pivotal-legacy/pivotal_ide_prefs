@@ -83,6 +83,6 @@ If your team is already maintaining their rubymine preferences via the now-depre
 * ~~Basic Logging~~
 * ~~Specify log levels at the command line~~
 * ~~IntelliJ prefs~~
-* Appcode prefs
+* ~~Appcode prefs~~
 * ~~PyCharm prefs~~
 * ~~WebStorm prefs~~

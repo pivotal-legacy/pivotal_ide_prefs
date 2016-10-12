@@ -20,6 +20,9 @@
   <action id="EditorIndentLineOrSelection">
     <keyboard-shortcut first-keystroke="meta close_bracket" />
   </action>
+  <action id="EditorScrollBottom">
+    <keyboard-shortcut first-keystroke="ctrl meta alt space" />
+  </action>
   <action id="EditorTextEnd">
     <keyboard-shortcut first-keystroke="meta end" />
     <keyboard-shortcut first-keystroke="meta up" />

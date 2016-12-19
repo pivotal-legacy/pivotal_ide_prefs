@@ -35,9 +35,17 @@ module Acceptance
 
         def run
           Bundler.with_clean_env do
-            Open3.popen3("bin/ide_prefs --ide rubymine --backup-prefs-location=#{backup_prefs_location} --user-prefs-location tmp/RubyminePrefs #{command_name}",) do |stdin, stdout, stderr, wait_thr|
-              @exit_status = wait_thr.value
-              @output = stdout.read.chomp + stderr.read.chomp
+            Dir.chdir '..' do
+              Open3.popen3(
+                "cli/bin/ide_prefs" +
+                " --ide rubymine" +
+                " --backup-prefs-location=#{backup_prefs_location}" +
+                " --user-prefs-location cli/tmp/RubyminePrefs" +
+                " #{command_name}"
+              ) do |stdin, stdout, stderr, wait_thr|
+                @exit_status = wait_thr.value
+                @output = stdout.read.chomp + stderr.read.chomp
+              end
             end
           end
         end

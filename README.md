@@ -26,8 +26,9 @@ Then, run the following commands:
 
 ```sh
 git clone https://github.com/pivotal/pivotal_ide_prefs
-cd pivotal_ide_prefs/cli
-bin/ide_prefs --ide=[rubymine,intellij,intellijcommunity,webstorm,androidstudio,appcode,clion,pycharm] install
+cd pivotal_ide_prefs
+cli/bin/ide_prefs install --ide=intellij
+# ide flag can be any of [rubymine,intellij,intellijcommunity,webstorm,androidstudio,appcode,clion,pycharm]
 ```
 
 This will install the preferences into your IDE of choice. 

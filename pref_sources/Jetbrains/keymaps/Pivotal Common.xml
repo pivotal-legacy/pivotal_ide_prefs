@@ -1,4 +1,4 @@
-<keymap version="1" name="Pivotal Common" parent="Mac OS X 10.5+">
+<keymap version="1" name="PivotalCommon" parent="Mac OS X 10.5+">
   <action id="CloseAllEditors">
     <keyboard-shortcut first-keystroke="meta alt w" />
   </action>

@@ -75,15 +75,3 @@ If your team is already maintaining their rubymine preferences via the now-depre
         cp -r /path/to/your/Pivotal-Preferences-RubyMine/RubyMineXX/* pref_sources/RubyMine/
 
 4. Re-install your preferences using `pivotal_ide_prefs` (see the Installation section above).
-
-## TODO
-
-* ~~Install command~~
-* ~~Uninstall command~~
-* ~~Make commands Idempodent~~
-* ~~Basic Logging~~
-* ~~Specify log levels at the command line~~
-* ~~IntelliJ prefs~~
-* ~~Appcode prefs~~
-* ~~PyCharm prefs~~
-* ~~WebStorm prefs~~

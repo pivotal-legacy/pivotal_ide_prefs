@@ -29,5 +29,27 @@ module Cli::Ide
         expect(dir).to eq(default_dir)
       end
     end
+
+    context "with new Jetbrains versioning scheme" do
+      it "can pick a higher point in the same year even if it's in middle of dir list" do
+        dirs = %w(rubymine/dir2016.1 rubymine/dir2016.2 rubymine/dir80)
+        dir = PreferencesDirectory.new(
+          directories: dirs,
+          match_pattern: /dir.*/
+        ).to_s
+
+        expect(dir).to eq('rubymine/dir2016.2')
+      end
+
+      it "can pick a new year even if it's in middle of dir list" do
+        dirs = %w(rubymine/dir2016.1 rubymine/dir2017.1 rubymine/dir80)
+        dir = PreferencesDirectory.new(
+          directories: dirs,
+          match_pattern: /dir.*/
+        ).to_s
+
+        expect(dir).to eq('rubymine/dir2017.1')
+      end
+    end
   end
 end

@@ -33,6 +33,10 @@ cli/bin/ide_prefs install --ide=intellij
 
 This will install the preferences into your IDE of choice. 
 
+If pivotal-ide-prefs does not install settings for the latest IDE version, you can tell it the latest version with --user-prefs-location
+```
+cli/bin/ide_prefs install --ide=clion --user-prefs-location=/Users/pivotal/Library/Preferences/Clion2016.3
+```
 ## Tracking changes ##
 
 The installation process symlinks the pivotal preferences into your IDE's preferences folder. Thus, as you and 
@@ -47,7 +51,7 @@ Then open a terminal and run the following commands:
 
 ```sh
 cd /path/to/your/pivotal_ide_prefs/cli
-bin/ide_prefs --ide=[rubymine,intellij,intellijcommunity,androidstudio,appcode,clion,pycharm] uninstall
+bin/ide_prefs uninstall --ide=[rubymine,intellij,intellijcommunity,androidstudio,appcode,clion,pycharm]
 ```
 
 ## Contributing New Preferences

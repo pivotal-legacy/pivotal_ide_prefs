@@ -41,6 +41,10 @@ For example, imagine you had IntelliJ `2016.2`, `2016.3`, and `2017.1` installed
 cli/bin/ide_prefs install --ide=intellij --user-prefs-location=/Users/pivotal/Library/Preferences/IntelliJIdea2016.3
 ```
 
+If pivotal-ide-prefs does not install settings for the latest IDE version, you can tell it the latest version with --user-prefs-location
+```
+cli/bin/ide_prefs install --ide=clion --user-prefs-location=/Users/pivotal/Library/Preferences/Clion2016.3
+```
 ## Tracking changes ##
 
 The installation process symlinks the pivotal preferences into your IDE's preferences folder. Thus, as you and 

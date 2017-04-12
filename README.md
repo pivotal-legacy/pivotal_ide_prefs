@@ -31,7 +31,15 @@ cli/bin/ide_prefs install --ide=intellij
 # ide flag can be any of [rubymine,intellij,intellijcommunity,webstorm,androidstudio,appcode,clion,pycharm]
 ```
 
-This will install the preferences into your IDE of choice. 
+This will install the preferences into your IDE of choice; it will default to installing preferences into the latest version of the IDE installed on your machine; if no IDE is installed on your machine, then it will install into the "default" version configured in pivotal_ide_prefs. If you want to find the default version for your IDE, look in `cli/lib/cli/ide/<IDE>_user_pref_dir.rb`.
+
+If you do not want the preferences setup for the newest version of the IDE installed on your machine (or the default configured in pivotal_ide_prefs), you can override the preference directory location with the `--user-prefs-location`. 
+
+For example, imagine you had IntelliJ `2016.2`, `2016.3`, and `2017.1` installed on your machine. In this case, `pivotal_ide_prefs` will install to the latest version of the IDE installed on your machine: `2017.1`. If you also wanted to install it to `2016.3` or `2016.2`, you would need to use the `--user-prefs-location` flag:
+
+```
+cli/bin/ide_prefs install --ide=intellij --user-prefs-location=/Users/pivotal/Library/Preferences/IntelliJIdea2016.3
+```
 
 ## Tracking changes ##
 
@@ -47,7 +55,7 @@ Then open a terminal and run the following commands:
 
 ```sh
 cd /path/to/your/pivotal_ide_prefs/cli
-bin/ide_prefs --ide=[rubymine,intellij,intellijcommunity,androidstudio,appcode,clion,pycharm] uninstall
+bin/ide_prefs uninstall --ide=[rubymine,intellij,intellijcommunity,androidstudio,appcode,clion,pycharm]
 ```
 
 ## Contributing New Preferences

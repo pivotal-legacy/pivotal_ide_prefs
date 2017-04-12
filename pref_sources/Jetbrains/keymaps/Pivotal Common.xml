@@ -9,6 +9,18 @@
     <keyboard-shortcut first-keystroke="ctrl meta alt open_bracket" />
     <keyboard-shortcut first-keystroke="ctrl meta alt close_bracket" />
   </action>
+  <action id="EditorTextEnd">
+    <keyboard-shortcut first-keystroke="meta END" />
+    <keyboard-shortcut first-keystroke="control PAGE_DOWN" />
+  </action>
+  <action id="EditorTextEndWithSelection">
+    <keyboard-shortcut first-keystroke="shift meta END" />
+    <keyboard-shortcut first-keystroke="shift control PAGE_DOWN" />
+  </action>
+  <action id="EditorTextStart">
+    <keyboard-shortcut first-keystroke="meta HOME" />
+    <keyboard-shortcut first-keystroke="control PAGE_UP" />
+  </action>
   <action id="Macro.run whole test file">
     <keyboard-shortcut first-keystroke="ctrl meta alt r" />
   </action>

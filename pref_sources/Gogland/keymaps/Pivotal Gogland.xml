@@ -1,0 +1,9 @@
+<keymap version="1" name="Pivotal Gogland" parent="Mac OS X 10.5+">
+  <action id="CloseAllEditors">
+    <keyboard-shortcut first-keystroke="shift meta alt w" />
+  </action>
+  <action id="CloseAllEditorsButActive">
+    <keyboard-shortcut first-keystroke="shift meta w" />
+  </action>
+  <action id="DumpLookupElementWeights" />
+</keymap>

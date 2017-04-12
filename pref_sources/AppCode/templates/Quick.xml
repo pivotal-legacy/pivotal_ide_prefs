@@ -1,0 +1,56 @@
+<templateSet group="Quick">
+  <template name="qbef" value="beforeEach {&#10;    $END$&#10;}" description="Quick before each block" toReformat="true" toShortenFQNames="true">
+    <context>
+      <option name="swift.lang.context" value="true" />
+    </context>
+  </template>
+  <template name="qdesc" value="describe(&quot;$DESCRIPTION$&quot;) {&#10;    $END$&#10;}" description="Quick describe block" toReformat="true" toShortenFQNames="true">
+    <variable name="DESCRIPTION" expression="" defaultValue="" alwaysStopAt="true" />
+    <context>
+      <option name="swift.lang.context" value="true" />
+    </context>
+  </template>
+  <template name="qcont" value="context(&quot;$DESCRIPTION$&quot;) {&#10;    $END$&#10;}" description="Quick context block" toReformat="true" toShortenFQNames="true">
+    <variable name="DESCRIPTION" expression="" defaultValue="" alwaysStopAt="true" />
+    <context>
+      <option name="swift.lang.context" value="true" />
+    </context>
+  </template>
+  <template name="qit" value="it(&quot;$DESCRIPTION$&quot;) {&#10;    $END$&#10;}" description="Quick it block" toReformat="true" toShortenFQNames="true">
+    <variable name="DESCRIPTION" expression="" defaultValue="" alwaysStopAt="true" />
+    <context>
+      <option name="swift.lang.context" value="true" />
+    </context>
+  </template>
+  <template name="qaft" value="afterEach {&#10;    $END$&#10;}" description="Quick after each block" toReformat="true" toShortenFQNames="true">
+    <context>
+      <option name="swift.lang.context" value="true" />
+    </context>
+  </template>
+  <template name="qsharecont" value="sharedExamples(&quot;$DESCRIPTION$&quot;) { (sharedExampleContext: SharedExampleContext) in&#10;    $END$&#10;}" description="Quick shared example group with context" toReformat="true" toShortenFQNames="true">
+    <variable name="DESCRIPTION" expression="" defaultValue="" alwaysStopAt="true" />
+    <context>
+      <option name="swift.lang.context" value="true" />
+    </context>
+  </template>
+  <template name="qshare" value="sharedExamplesFor(&quot;$DESCRIPTION$&quot;) {&#10;    $END$&#10;}" description="Quick shared example group" toReformat="true" toShortenFQNames="true">
+    <variable name="DESCRIPTION" expression="" defaultValue="" alwaysStopAt="true" />
+    <context>
+      <option name="swift.lang.context" value="true" />
+    </context>
+  </template>
+  <template name="qbl" value="itBehavesLike(&quot;$DESCRIPTION$&quot;)" description="Quick behaves like" toReformat="true" toShortenFQNames="true">
+    <variable name="DESCRIPTION" expression="" defaultValue="" alwaysStopAt="true" />
+    <context>
+      <option name="swift.lang.context" value="true" />
+    </context>
+  </template>
+  <template name="qblcont" value="itBehavesLike(&quot;$DESCRIPTION$&quot;) {&#10;    [&quot;$KEY$&quot;: $VALUE$]&#10;}" description="Quick behaves like with context" toReformat="true" toShortenFQNames="true">
+    <variable name="DESCRIPTION" expression="" defaultValue="" alwaysStopAt="true" />
+    <variable name="KEY" expression="" defaultValue="" alwaysStopAt="true" />
+    <variable name="VALUE" expression="" defaultValue="" alwaysStopAt="true" />
+    <context>
+      <option name="swift.lang.context" value="true" />
+    </context>
+  </template>
+</templateSet>

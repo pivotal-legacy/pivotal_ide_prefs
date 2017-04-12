@@ -16,14 +16,14 @@
     <keyboard-shortcut first-keystroke="shift ctrl meta alt left" />
     <keyboard-shortcut first-keystroke="shift ctrl meta alt right" />
   </action>
-  <action id="Resume">
-    <keyboard-shortcut first-keystroke="f9" />
-  </action>
-  <action id="SplitHorizontally">
+  <action id="MoveTabDown">
     <keyboard-shortcut first-keystroke="shift ctrl meta alt down" />
   </action>
-  <action id="SplitVertically">
+  <action id="MoveTabRight">
     <keyboard-shortcut first-keystroke="shift ctrl meta alt up" />
+  </action>
+  <action id="Resume">
+    <keyboard-shortcut first-keystroke="f9" />
   </action>
   <action id="SwitchApply">
     <keyboard-shortcut first-keystroke="ctrl alt enter" />

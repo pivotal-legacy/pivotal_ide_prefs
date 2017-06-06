@@ -28,7 +28,7 @@ Then, run the following commands:
 git clone https://github.com/pivotal/pivotal_ide_prefs
 cd pivotal_ide_prefs
 cli/bin/ide_prefs install --ide=intellij
-# ide flag can be any of [rubymine,intellij,intellijcommunity,webstorm,androidstudio,appcode,clion,pycharm]
+# ide flag can be any of [rubymine,intellij,intellijcommunity,webstorm,androidstudio,appcode,clion,gogland,pycharm]
 ```
 
 This will install the preferences into your IDE of choice; it will default to installing preferences into the latest version of the IDE installed on your machine; if no IDE is installed on your machine, then it will install into the "default" version configured in pivotal_ide_prefs. If you want to find the default version for your IDE, look in `cli/lib/cli/ide/<IDE>_user_pref_dir.rb`.
@@ -55,7 +55,7 @@ Then open a terminal and run the following commands:
 
 ```sh
 cd /path/to/your/pivotal_ide_prefs/cli
-bin/ide_prefs uninstall --ide=[rubymine,intellij,intellijcommunity,androidstudio,appcode,clion,pycharm]
+bin/ide_prefs uninstall --ide=[rubymine,intellij,intellijcommunity,androidstudio,appcode,clion,gogland,pycharm]
 ```
 
 ## Contributing New Preferences

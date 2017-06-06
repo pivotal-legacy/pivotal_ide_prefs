@@ -1,4 +1,4 @@
-<keymap version="1" name="Pivotal AppCode" parent="Pivotal Common">
+<keymap version="1" name="Pivotal AppCode" parent="PivotalCommon">
   <action id="Back">
     <keyboard-shortcut first-keystroke="meta open_bracket" />
     <keyboard-shortcut first-keystroke="meta alt left" />

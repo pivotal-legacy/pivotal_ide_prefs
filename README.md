@@ -27,7 +27,7 @@ Then, run the following commands:
 ```sh
 git clone https://github.com/mavenlink/mavenlink_ide_prefs
 cd mavenlink_ide_prefs/cli
-bin/ide_prefs --ide=[rubymine,intellij,intellijcommunity,webstorm,androidstudio,pycharm] install
+bin/ide_prefs --ide=rubymine install
 ```
 
 This will install the preferences into your IDE of choice. 

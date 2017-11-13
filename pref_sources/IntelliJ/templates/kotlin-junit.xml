@@ -1,0 +1,32 @@
+<templateSet group="Kotlin-JUnit">
+  <template name="test" value="@org.junit.Test&#10;fun `$1$`() {&#10;    $END$&#10;}" description="Kotlin JUnit test" toReformat="true" toShortenFQNames="true">
+    <variable name="1" expression="" defaultValue="&quot;it should&quot;" alwaysStopAt="true" />
+    <context>
+      <option name="KOTLIN_CLASS" value="true" />
+    </context>
+  </template>
+  <template name="aft" value="@org.junit.After&#10;fun $1$() {&#10;    $END$&#10;}" description="Kotlin JUnit After" toReformat="true" toShortenFQNames="true">
+    <variable name="1" expression="" defaultValue="&quot;tearDown&quot;" alwaysStopAt="true" />
+    <context>
+      <option name="KOTLIN_CLASS" value="true" />
+    </context>
+  </template>
+  <template name="aftc" value="companion object {&#10;    @org.junit.AfterClass&#10;    @JvmStatic&#10;    fun $1$() {&#10;        $END$&#10;    }&#10;}" description="Kotlin JUnit AfterClass" toReformat="true" toShortenFQNames="true" useStaticImport="true">
+    <variable name="1" expression="" defaultValue="&quot;tearDownClass&quot;" alwaysStopAt="true" />
+    <context>
+      <option name="KOTLIN_CLASS" value="true" />
+    </context>
+  </template>
+  <template name="befc" value="companion object {&#10;    @org.junit.BeforeClass&#10;    @JvmStatic&#10;    fun $1$() {&#10;        $END$&#10;    }&#10;}" description="Kotlin JUnit BeforeClass" toReformat="true" toShortenFQNames="true">
+    <variable name="1" expression="" defaultValue="&quot;setUpClass&quot;" alwaysStopAt="true" />
+    <context>
+      <option name="KOTLIN_CLASS" value="true" />
+    </context>
+  </template>
+  <template name="bef" value="@org.junit.Before&#10;fun $1$() {&#10;    $END$&#10;}" description="Kotlin JUnit Before" toReformat="true" toShortenFQNames="true">
+    <variable name="1" expression="" defaultValue="&quot;setUp&quot;" alwaysStopAt="true" />
+    <context>
+      <option name="KOTLIN_CLASS" value="true" />
+    </context>
+  </template>
+</templateSet>

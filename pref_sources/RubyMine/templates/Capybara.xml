@@ -1,14 +1,14 @@
 <templateSet group="Capybara">
   <template name="sos" value="save_and_open_screenshot" description="Save and open screenshot" toReformat="true" toShortenFQNames="true">
     <context>
-      <option name="RUBY" value="true" />
       <option name="CUCUMBER_FEATURE_FILE" value="true" />
+      <option name="RUBY" value="true" />
     </context>
   </template>
   <template name="sop" value="save_and_open_page" description="Save and open page" toReformat="true" toShortenFQNames="true">
     <context>
-      <option name="RUBY" value="true" />
       <option name="CUCUMBER_FEATURE_FILE" value="true" />
+      <option name="RUBY" value="true" />
     </context>
   </template>
 </templateSet>

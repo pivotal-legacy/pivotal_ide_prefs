@@ -8,7 +8,7 @@ module Cli
       end
 
       def default_ide_pref_dir_version
-        "2017.1"
+        "2017.3"
       end
     end
   end

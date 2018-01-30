@@ -4,11 +4,11 @@ module Cli
   module Ide
     class GoglandUserPrefDir < JetBrainsIdeUserPrefDir
       def ide_pref_dir_name_without_version
-        "Gogland"
+        "GoLand"
       end
 
       def default_ide_pref_dir_version
-        "1.0"
+        "2017.3"
       end
     end
   end

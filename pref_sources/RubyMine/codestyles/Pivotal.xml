@@ -1,14 +1,9 @@
-<code_scheme name="Pivotal">
+<code_scheme name="Pivotal" version="173">
   <option name="OTHER_INDENT_OPTIONS">
     <value>
       <option name="INDENT_SIZE" value="2" />
       <option name="CONTINUATION_INDENT_SIZE" value="2" />
       <option name="TAB_SIZE" value="2" />
-      <option name="USE_TAB_CHARACTER" value="false" />
-      <option name="SMART_TABS" value="false" />
-      <option name="LABEL_INDENT_SIZE" value="0" />
-      <option name="LABEL_INDENT_ABSOLUTE" value="false" />
-      <option name="USE_RELATIVE_INDENTS" value="false" />
     </value>
   </option>
   <JSCodeStyleSettings>
@@ -72,6 +67,7 @@
   <codeStyleSettings language="ruby">
     <option name="ALIGN_MULTILINE_PARAMETERS" value="false" />
     <option name="SPACE_WITHIN_BRACES" value="true" />
+    <option name="SPACE_WITHIN_ARRAY_INITIALIZER_BRACES" value="true" />
     <indentOptions>
       <option name="CONTINUATION_INDENT_SIZE" value="2" />
       <option name="USE_RELATIVE_INDENTS" value="false" />

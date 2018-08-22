@@ -2,7 +2,7 @@ require "cli/ide/jet_brains_ide_user_pref_dir"
 
 module Cli
   module Ide
-    class GoglandUserPrefDir < JetBrainsIdeUserPrefDir
+    class GolandUserPrefDir < JetBrainsIdeUserPrefDir
       def ide_pref_dir_name_without_version
         "GoLand"
       end

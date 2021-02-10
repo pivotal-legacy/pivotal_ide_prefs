@@ -4,7 +4,7 @@ module Cli
   module Ide
     class JetBrainsIdeUserPrefDir
       def path
-        preferences_directory = File.expand_path(File.join("~", "Library", "Preferences"))
+        preferences_directory = File.expand_path(File.join("~", "Library", "Application Support", "Jetbrains"))
 
         PreferencesDirectory.new(
           directories:    Dir.glob(File.join(preferences_directory, "#{ide_pref_dir_name_without_version}*")),

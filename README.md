@@ -1,3 +1,5 @@
+This repo is now located at the [jetbrains-ide-prefs](https://github.com/professor/jetbrains-ide-prefs)
+
 # Pivotal IDE Prefs
 
 [![Code Climate](https://codeclimate.com/github/pivotal/pivotal_ide_prefs.png)](https://codeclimate.com/github/pivotal/pivotal_ide_prefs)
